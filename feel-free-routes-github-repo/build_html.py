@@ -1,0 +1,184 @@
+"""Build the interactive client-facing HTML page from schedule.json.
+Writes both the named client file AND index.html (served by GitHub Pages)."""
+import json
+
+data = json.load(open("schedule.json"))
+P = data["program"]; MK = data["markets"]; SCH = data["schedule"]
+payload = json.dumps({"program": P, "markets": MK, "schedule": SCH})
+
+HTML = """<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Feel Free — Summer 2026 Field Sampling Routes</title>
+<style>
+:root{--ink:#14202b;--mute:#5d6b78;--line:#e3e8ee;--bg:#f6f8fa;--card:#fff;--accent:#0f7d8c;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+header{background:linear-gradient(135deg,#0f2a36,#15455a);color:#fff;padding:42px 0 34px}
+header .wrap{padding-bottom:0}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font-size:12px;opacity:.8;font-weight:600}
+h1{font-size:34px;font-weight:800;margin:8px 0 6px;letter-spacing:-.5px}
+.sub{opacity:.9;font-size:15px}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 16px;min-width:120px}
+.stat b{display:block;font-size:22px;font-weight:800}
+.stat span{font-size:12px;opacity:.85}
+.toolbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:18px 0 10px;border-bottom:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.label{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin-right:4px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;transition:.15s}
+.chip:hover{border-color:var(--accent)}
+.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.mkt.active{color:#fff}
+.viewtoggle{margin-left:auto}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 4px;font-size:12px;color:var(--mute)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+section.market{margin-top:30px}
+.mhead{display:flex;align-items:center;gap:12px;border-left:6px solid var(--accent);padding:6px 0 6px 14px;margin-bottom:6px}
+.mhead h2{font-size:22px;font-weight:800}
+.mhead .wh{font-size:12.5px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.weeklbl{grid-column:1 / -1;font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;gap:7px;box-shadow:0 1px 2px rgba(20,32,43,.04)}
+.card .d{display:flex;justify-content:space-between;align-items:baseline}
+.card .day{font-weight:800;font-size:14px}
+.card .date{font-size:12px;color:var(--mute)}
+.card .corr{font-weight:700;font-size:14.5px;line-height:1.25}
+.card .win{font-size:12px;color:var(--accent);font-weight:700}
+.card .vibe{font-size:12px;color:var(--mute)}
+.stops{border-top:1px dashed var(--line);padding-top:7px;display:flex;flex-direction:column;gap:6px}
+.stop{font-size:12px}
+.stop b{display:block;font-weight:700}
+.stop .meta{color:var(--mute)}
+.evt{background:#fff4d6;border:1px solid #f0d98a;color:#7a5b00;border-radius:8px;padding:5px 8px;font-size:11.5px;font-weight:700}
+.listwrap{display:none}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:13px;border:1px solid var(--line)}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--ink);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:128px}
+tr:hover td{background:#fafcfd}
+.tagcode{font-weight:800;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px}
+.foot{margin-top:30px;font-size:12px;color:var(--mute);border-top:1px solid var(--line);padding-top:16px}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid #c0392b;border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--ink);margin-top:16px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<header><div class="wrap">
+  <div class="kicker">Ignite Productions × Feel Free</div>
+  <h1>Summer 2026 Guerrilla Field-Sampling Routes</h1>
+  <div class="sub" id="subline"></div>
+  <div class="stats" id="stats"></div>
+</div></header>
+<div class="wrap">
+  <div class="toolbar">
+    <div class="row"><span class="label">Market</span><span id="mktchips"></span></div>
+    <div class="row" style="margin-top:8px">
+      <span class="label">Week</span><span id="wkchips"></span>
+      <span class="viewtoggle row">
+        <span class="chip view active" data-v="cal">Calendar</span>
+        <span class="chip view" data-v="list">List</span>
+      </span>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+  <div id="calwrap"></div>
+  <div class="listwrap" id="listwrap"></div>
+  <div class="note" id="compliance"></div>
+  <div class="foot" id="foot"></div>
+</div>
+<script>
+const DATA = __PAYLOAD__;
+const S = DATA.schedule, MK = DATA.markets, P = DATA.program;
+const markets = Object.keys(MK);
+const weeks = [...new Set(S.map(s=>s.week))].sort((a,b)=>a-b);
+let fMkt = "ALL", fWk = "ALL", view = "cal";
+document.getElementById('subline').textContent = P.client + "  ·  " + P.start_date + " – " + P.end_date + "  ·  " + P.cadence;
+const totalShifts=S.length;
+document.getElementById('stats').innerHTML = [
+  ["5","Markets"],[totalShifts,"Total shifts"],[totalShifts*2,"BA deployments"],
+  [(totalShifts*5.5).toFixed(0),"BA-hours"],["4","Shifts / market / week"]
+].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
+function chip(txt,active,cls){return `<span class="chip ${cls||''} ${active?'active':''}">${txt}</span>`}
+function renderChips(){
+  document.getElementById('mktchips').innerHTML =
+    chip("All markets",fMkt==="ALL",'mkt') +
+    markets.map(m=>{const c=MK[m].color;const a=fMkt===m;
+      return `<span class="chip mkt ${a?'active':''}" data-m="${m}" style="${a?`background:${c};border-color:${c}`:`border-color:${c}`}">${m}</span>`}).join("");
+  document.getElementById('wkchips').innerHTML =
+    chip("All weeks",fWk==="ALL",'wk') +
+    weeks.map(w=>`<span class="chip wk ${fWk==w?'active':''}" data-w="${w}">Wk ${w}</span>`).join("");
+  document.getElementById('legend').innerHTML = markets.map(m=>
+    `<span><span class="dot" style="background:${MK[m].color}"></span>${m}</span>`).join("")
+    + `<span><span class="dot" style="background:#f0d98a"></span>Event / surge anchor</span>`;
+}
+function filtered(){return S.filter(s=>(fMkt==="ALL"||s.market===fMkt)&&(fWk==="ALL"||s.week==fWk))}
+function cardHTML(s){
+  const stops = s.stops.map(t=>`<div class="stop"><b>${t.zone}</b><span class="meta">${t.time} · ${t.address}</span></div>`).join("");
+  return `<div class="card" style="border-top:3px solid ${s.color}">
+    <div class="d"><span class="day">${s.day}</span><span class="date">${s.date_pretty}</span></div>
+    <div class="corr">${s.corridor}</div><div class="win">${s.active}</div>
+    <div class="vibe">${s.vibe}</div><div class="stops">${stops}</div>
+    ${s.event?`<div class="evt">★ ${s.event}</div>`:""}</div>`;
+}
+function renderCal(){
+  const rows = filtered(); const byMkt = {};
+  rows.forEach(s=>{(byMkt[s.market]=byMkt[s.market]||[]).push(s)});
+  let html=""; const mlist = fMkt==="ALL"?markets:[fMkt];
+  mlist.forEach(m=>{
+    const items=(byMkt[m]||[]); if(!items.length) return;
+    html+=`<section class="market"><div class="mhead" style="border-color:${MK[m].color}">
+      <h2>${m}</h2><span class="wh">⌂ Start: ${MK[m].warehouse}</span></div>`;
+    const byWk={}; items.forEach(s=>{(byWk[s.week]=byWk[s.week]||[]).push(s)});
+    Object.keys(byWk).sort((a,b)=>a-b).forEach(w=>{
+      const ds=byWk[w];
+      html+=`<div class="grid"><div class="weeklbl">Week ${w} · ${ds[0].date_pretty} →</div>`;
+      ds.forEach(s=>html+=cardHTML(s)); html+=`</div>`;
+    });
+    html+=`</section>`;
+  });
+  document.getElementById('calwrap').innerHTML = html || "<p style='margin-top:30px;color:#5d6b78'>No shifts match.</p>";
+}
+function renderList(){
+  const rows = filtered();
+  let html=`<table style="margin-top:20px"><thead><tr>
+    <th>Wk</th><th>Date</th><th>Day</th><th>Market</th><th>Corridor</th><th>Window</th>
+    <th>Route stops</th><th>Event</th></tr></thead><tbody>`;
+  rows.forEach(s=>{
+    const stops=s.stops.map(t=>`${t.zone} (${t.time})`).join("<br>");
+    html+=`<tr><td>${s.week}</td><td>${s.date_pretty}</td><td>${s.day}</td>
+      <td><span class="tagcode" style="background:${s.color}">${s.code}</span> ${s.market}</td>
+      <td><b>${s.corridor}</b><br><span style="color:#5d6b78">${s.vibe}</span></td>
+      <td>${s.active}</td><td>${stops}</td><td>${s.event||""}</td></tr>`;
+  });
+  html+="</tbody></table>"; document.getElementById('listwrap').innerHTML=html;
+}
+function render(){
+  renderChips();
+  document.getElementById('calwrap').style.display = view==="cal"?"block":"none";
+  document.getElementById('listwrap').style.display = view==="list"?"block":"none";
+  if(view==="cal") renderCal(); else renderList();
+}
+document.body.addEventListener('click',e=>{
+  const c=e.target.closest('.chip'); if(!c) return;
+  if(c.dataset.m!==undefined) fMkt=c.dataset.m;
+  else if(c.classList.contains('mkt')) fMkt="ALL";
+  else if(c.dataset.w!==undefined) fWk=c.dataset.w;
+  else if(c.classList.contains('wk')) fWk="ALL";
+  else if(c.dataset.v) view=c.dataset.v;
+  document.querySelectorAll('.chip.view').forEach(x=>x.classList.toggle('active',x.dataset.v===view));
+  render();
+});
+document.getElementById('compliance').innerHTML = "<b>Compliance reminder.</b> "+P.compliance;
+document.getElementById('foot').innerHTML =
+  "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Phoenix is excluded from this phase.";
+render();
+</script>
+</body></html>"""
+
+html = HTML.replace("__PAYLOAD__", payload)
+for fn in ("Feel_Free_Summer2026_Routes_CLIENT.html", "index.html"):
+    with open(fn, "w") as f:
+        f.write(html)
+print("HTML written:", len(html), "bytes -> Feel_Free_Summer2026_Routes_CLIENT.html + index.html")
