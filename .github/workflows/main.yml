@@ -1,0 +1,47 @@
+name: Build & deploy routes site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Regenerate all deliverables
+        run: |
+          python3 build_data.py
+          python3 build_xlsx.py
+          python3 build_pdf.py
+          python3 build_html.py
+      - name: Assemble site folder
+        run: |
+          mkdir -p site
+          cp index.html site/index.html
+          cp Feel_Free_Summer2026_Routes_CLIENT.pdf site/
+          cp Feel_Free_Summer2026_Route_Plan_INTERNAL.xlsx site/
+          cp schedule.json site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
