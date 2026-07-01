@@ -26,11 +26,18 @@ ws["A1"] = "FEEL FREE — SUMMER 2026 GUERRILLA FIELD SAMPLING"
 ws["A1"].font = Font(bold=True, size=16, color=INK)
 ws["A2"] = "Weekly Route Plan  |  Internal Ops Master  |  Ignite Productions"
 ws["A2"].font = Font(size=11, italic=True, color=MUTE)
+def _mk_label(name, m):
+    if m.get("tbd"):
+        return f"{name} (TBD)"
+    if "concluded" in m.get("status", ""):
+        return f"{name} (concluded)"
+    return name
+
 facts = [
     ("Client", P["client"]),
-    ("Program window", f'{P["start_date"]}  to  {P["end_date"]}'),
-    ("Cadence", P["cadence"] + "  (4 shifts/market/week)"),
-    ("Markets", "Miami · Ft. Lauderdale · Tampa/St. Pete · Austin · San Antonio  (Phoenix excluded)"),
+    ("Program window", f'{P["start_date"]}  to  {P["end_date"]}  (varies by market — see below)'),
+    ("Cadence", P["cadence"] + "  (4 shifts/market/week while active)"),
+    ("Markets", " · ".join(_mk_label(name, m) for name, m in MK.items())),
     ("Shift structure", f'{P["bas_per_shift"]} BAs/shift · {P["billable_hours_per_ba"]} billable hrs/BA'),
     ("Thu / Fri window", f'Call {P["windows"]["Thu"]["call"]} · Active {P["windows"]["Thu"]["active"]}'),
     ("Sat / Sun window", f'Call {P["windows"]["Sat"]["call"]} · Active {P["windows"]["Sat"]["active"]}'),
@@ -99,11 +106,17 @@ for market, m in MK.items():
     wsx["A1"].font = Font(bold=True, size=14, color=m["color"].lstrip("#"))
     wsx["A2"] = f'Warehouse (shift start): {m["warehouse"]}'; wsx["A2"].font = Font(size=10, italic=True, color=MUTE)
     wsx["A3"] = f'Product: {m["product"]}   |   2 BAs/shift · 5.5 hrs/BA'; wsx["A3"].font = Font(size=10, color=MUTE)
+    wsx["A4"] = m.get("status", ""); wsx["A4"].font = Font(size=10, bold=True, color=INK)
     hdr(wsx, 5, ["Wk", "Date", "Day", "Active Window", "Corridor", "Vibe",
                  "Stop 1 (zone · time · address)", "Stop 2 (zone · time · address)",
                  "Why this stop", "Event / Note"], m["color"].lstrip("#"))
     r = 6
-    for s in [x for x in SCH if x["market"] == market]:
+    mkt_rows = [x for x in SCH if x["market"] == market]
+    if not mkt_rows:
+        wsx.cell(row=r, column=1, value="Schedule TBD — corridors and dates to be announced.").font = (
+            Font(size=11, italic=True, color=MUTE))
+        wsx.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
+    for s in mkt_rows:
         st = s["stops"]
         fmt = lambda x: f'{x["zone"]}\n{x["time"]}\n{x["address"]}'
         row = [s["week"], s["date_pretty"], s["day"], s["active"], s["corridor"], s["vibe"],

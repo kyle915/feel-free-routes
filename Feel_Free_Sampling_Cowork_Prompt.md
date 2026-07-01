@@ -29,15 +29,19 @@ You produce three deliverables every time: (1) an **internal Excel workbook** fo
   permits, property permissions, and the weekly **Kratom Eligibility Schedule**. Honor the SOW.
 
 ## INPUTS  *(edit these)*
-- **Date range:** `2026-06-25` to `2026-07-31`  *(start on a Thursday)*
-- **Markets + warehouse (shift-start) addresses:**
-  - Miami, FL — 13101 NE 16th Ave, Miami, FL 33161
-  - Ft. Lauderdale, FL — 4551 W Sunrise Blvd, Plantation, FL 33313
-  - Tampa / St. Pete, FL — 10700 US Highway 19 N, Pinellas Park, FL 33782
-  - Austin, TX — 6330 Harold Ct, Austin, TX 78721
-  - San Antonio, TX — 3440 Fredericksburg Rd, San Antonio, TX 78201
-  - *(Phoenix, AZ is EXCLUDED this phase)*
-- **Shifts/market/week:** 4 (Thu, Fri, Sat, Sun)
+- **Date range:** set **per market** now, not globally — each `MARKETS` entry in
+  `build_data.py` has its own `"start"`/`"end"` (both `YYYY-MM-DD`, ideally a Thursday
+  start). Only Thu/Fri/Sat/Sun dates within that window ever generate a shift.
+- **Markets + warehouse (shift-start) addresses + windows:**
+  - Miami, FL — 13101 NE 16th Ave, Miami, FL 33161 — weekly, `2026-07-02` to `2026-09-24`
+  - Ft. Lauderdale, FL — 4551 W Sunrise Blvd, Plantation, FL 33313 — weekly, `2026-07-02` to `2026-09-24`
+  - Tampa / St. Pete, FL — 10700 US Highway 19 N, Pinellas Park, FL 33782 — weekly, `2026-07-02` to `2026-09-24`
+  - San Antonio, TX — 3440 Fredericksburg Rd, San Antonio, TX 78201 — weekly, `2026-06-27` to `2026-09-24`
+  - Austin, TX — 6330 Harold Ct, Austin, TX 78721 — pilot weekend only, `2026-06-27` to `2026-06-28`
+    (did not continue into the extended run)
+  - *(Phoenix, AZ — added as a placeholder market with `"tbd": True`; no warehouse, templates,
+    or dates yet. Fill those in and drop the `tbd` flag once confirmed.)*
+- **Shifts/market/week:** 4 (Thu, Fri, Sat, Sun) while a market is active
 - **Anything special this run:** *(e.g., add Week 7, swap a corridor, drop a market, new event)*
 
 ## Method (do this in order)
@@ -50,8 +54,9 @@ You produce three deliverables every time: (1) an **internal Excel workbook** fo
    Keep Sunday close to the warehouse to limit travel burden where possible.
 3. **Layer event overrides** onto specific dates (reroute to the event corridor, tag the surge).
    Holiday weekends (e.g., July 4) → beach/fireworks emphasis.
-4. **Generate the dated schedule** across all Thu–Sun dates in range. If the range ends mid-week,
-   cap at the last in-range day and label remaining weekend cells "rolls to [next month]."
+4. **Generate the dated schedule** across all Thu–Sun dates in each market's own range. If a
+   market's range ends mid-week, cap at the last in-range day and label the remaining cells
+   in that week "no shift this week" (deliverables no longer assume everyone ends the same month).
 5. **Build the three deliverables** (see below). Verify day-of-week math, shift counts, and that
    compliance language appears in each.
 
@@ -77,12 +82,21 @@ Run order: `bash rebuild.sh`  (or run the four scripts in sequence).
 GitHub Action rebuilds everything and republishes the site automatically.
 
 ## Common change requests & how to handle them
-- **Add a week / extend dates:** change `start_date`/`end_date` in `build_data.py`, re-run.
+- **Add a week / extend dates:** change that market's `"start"`/`"end"` in its `MARKETS` entry
+  in `build_data.py`, re-run. `PROGRAM["start_date"]`/`["end_date"]` are recomputed automatically
+  from the generated schedule — don't hand-edit those.
 - **Swap a corridor:** edit that market's `templates[day]` in `build_data.py`.
-- **Add an event surge:** add an entry to `OVERRIDES` keyed by `(market, "YYYY-MM-DD")`.
+- **Add an event surge:** add an entry to `OVERRIDES` keyed by `(market, "YYYY-MM-DD")`. If a
+  market's window shrinks (like Austin's did), remove any now-unreachable `OVERRIDES` entries for
+  dates outside its new window — dead entries just confuse the next person editing the file.
 - **Different shift count per market:** adjust which weekdays are generated per market.
-- **New market:** add a `MARKETS` entry with `code`, `color`, `warehouse`, `product`, and a
-  full `templates` block (Thu/Fri/Sat/Sun), then re-run.
+- **Pause/stop a market without deleting it:** shrink its `"end"` date to its last real shift
+  (see Austin). It keeps its `templates` and shows up everywhere as "concluded."
+- **New market:** add a `MARKETS` entry with `code`, `color`, `warehouse`, `product`, `start`,
+  `end`, and a full `templates` block (Thu/Fri/Sat/Sun), then re-run.
+- **Market not confirmed yet:** add a `MARKETS` entry with `"tbd": True` and no `start`/`end`/
+  `templates` (see Phoenix). It shows up in every deliverable as "Schedule TBD" with zero shifts
+  until you fill in the real details and drop the flag.
 - **Phase 2 / more units:** scale weeks or add markets; keep 2 BAs × 5.5 hrs unless told otherwise.
 
 ## Tone & quality bar

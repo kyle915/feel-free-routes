@@ -12,7 +12,6 @@ INK = HexColor("#14202b"); MUTE = HexColor("#5d6b78"); LINE = HexColor("#dbe2e8"
 BG = HexColor("#f6f8fa"); CREAM = HexColor("#fff4d6"); GOLD = HexColor("#f0d98a"); NAVY = HexColor("#15455a")
 M = 40
 DAYS = ["Thu", "Fri", "Sat", "Sun"]
-WEEKS = sorted(set(s["week"] for s in SCH))
 c = canvas.Canvas("Feel_Free_Summer2026_Routes_CLIENT.pdf", pagesize=(PW, PH))
 
 def wrap_text(cv, text, font, size, maxw):
@@ -33,15 +32,15 @@ def cover():
     c.setFont("Helvetica-Bold", 30); c.drawString(M, PH-100, "Summer 2026 Guerrilla Field-Sampling Program")
     c.setFont("Helvetica", 14)
     c.drawString(M, PH-126, f'{P["client"]}   ·   {P["start_date"]} – {P["end_date"]}   ·   {P["cadence"]}')
-    stats = [("5", "Markets"), (str(len(SCH)), "Total shifts"), (str(len(SCH)*2), "BA deployments"),
-             (f'{len(SCH)*5.5:.0f}', "BA-hours"), ("4", "Shifts / mkt / wk")]
+    stats = [(str(len(MK)), "Markets"), (str(len(SCH)), "Total shifts"), (str(len(SCH)*2), "BA deployments"),
+             (f'{len(SCH)*5.5:.0f}', "BA-hours"), ("4", "Shifts / active mkt / wk")]
     x = M; y = PH-220; cw = 138; ch = 78
     for big, lab in stats:
         c.setFillColor(HexColor("#1d5468")); c.roundRect(x, y, cw, ch, 10, fill=1, stroke=0)
         c.setFillColor(white); c.setFont("Helvetica-Bold", 30); c.drawString(x+14, y+34, big)
         c.setFont("Helvetica", 11); c.drawString(x+14, y+16, lab); x += cw + 12
     c.setFillColor(white); c.setFont("Helvetica-Bold", 13)
-    c.drawString(M, y-34, "MARKETS & SIGNATURE 21+ CORRIDORS  (Phoenix excluded this phase)")
+    c.drawString(M, y-34, "MARKETS & SIGNATURE 21+ CORRIDORS")
     yy = y-58
     for mk, m in MK.items():
         c.setFillColor(HexColor(m["color"])); c.roundRect(M, yy-10, 150, 22, 5, fill=1, stroke=0)
@@ -49,8 +48,9 @@ def cover():
         corrs = []
         for s in SCH:
             if s["market"] == mk and s["corridor"] not in corrs: corrs.append(s["corridor"])
+        text = ("  •  ".join(corrs[:5]))[:120] if corrs else m.get("status", "Schedule TBD")
         c.setFillColor(HexColor("#cfe0e6")); c.setFont("Helvetica", 10)
-        c.drawString(M+170, yy-3, ("  •  ".join(corrs[:5]))[:120]); yy -= 30
+        c.drawString(M+170, yy-3, text); yy -= 30
     c.setFillColor(HexColor("#0e2630")); c.rect(0, 0, PW, 92, fill=1, stroke=0)
     c.setFillColor(GOLD); c.setFont("Helvetica-Bold", 11); c.drawString(M, 70, "COMPLIANCE GUARDRAILS")
     c.setFillColor(white)
@@ -58,26 +58,41 @@ def cover():
         c.drawString(M, 54-i*13, line)
     c.showPage()
 
-def market_page(mk):
+def tbd_page(mk):
     m = MK[mk]; col = HexColor(m["color"])
-    rows = [s for s in SCH if s["market"] == mk]
-    grid = {(s["week"], s["day"]): s for s in rows}
     c.setFillColor(BG); c.rect(0, 0, PW, PH, fill=1, stroke=0)
     c.setFillColor(col); c.rect(0, PH-64, PW, 64, fill=1, stroke=0)
     c.setFillColor(white); c.setFont("Helvetica-Bold", 22); c.drawString(M, PH-40, f'{mk}')
     c.setFont("Helvetica-Bold", 11); c.drawRightString(PW-M, PH-26, f'{m["code"]}  ·  Feel Free Summer 2026')
-    c.setFont("Helvetica", 10); c.drawRightString(PW-M, PH-42, "Weekly guerrilla sampling route")
+    c.setFillColor(INK); c.setFont("Helvetica-Bold", 20)
+    c.drawCentredString(PW/2, PH/2+14, "Schedule TBD")
+    c.setFillColor(MUTE); c.setFont("Helvetica", 12)
+    c.drawCentredString(PW/2, PH/2-10, "Warehouse, corridors, and launch dates to be announced.")
+    c.showPage()
+
+def market_page(mk):
+    m = MK[mk]; col = HexColor(m["color"])
+    if m.get("tbd"):
+        tbd_page(mk); return
+    rows = [s for s in SCH if s["market"] == mk]
+    grid = {(s["week"], s["day"]): s for s in rows}
+    mkt_weeks = sorted(set(s["week"] for s in rows))
+    c.setFillColor(BG); c.rect(0, 0, PW, PH, fill=1, stroke=0)
+    c.setFillColor(col); c.rect(0, PH-64, PW, 64, fill=1, stroke=0)
+    c.setFillColor(white); c.setFont("Helvetica-Bold", 22); c.drawString(M, PH-40, f'{mk}')
+    c.setFont("Helvetica-Bold", 11); c.drawRightString(PW-M, PH-26, f'{m["code"]}  ·  Feel Free Summer 2026')
+    c.setFont("Helvetica", 10); c.drawRightString(PW-M, PH-42, m.get("status", "Weekly guerrilla sampling route"))
     c.setFont("Helvetica", 9.5)
     c.drawString(M, PH-57, f'⌂ Shift start (warehouse): {m["warehouse"]}   |   2 BAs/shift · 5.5 hrs/BA · {m["product"]}')
     top = PH-74; bottom = 64; label_w = 70; gx = M + label_w; gw = PW - M - gx; colw = gw/4
-    head_h = 22; nrows = len(WEEKS); rowh = (top - bottom - head_h) / nrows
+    head_h = 22; nrows = len(mkt_weeks); rowh = (top - bottom - head_h) / nrows
     c.setFillColor(INK)
     for i, d in enumerate(DAYS):
         x = gx + i*colw; c.rect(x, top-head_h, colw-2, head_h, fill=1, stroke=0)
         c.setFillColor(white); c.setFont("Helvetica-Bold", 11)
         wlabel = "12–5 PM" if d in ("Sat", "Sun") else "3–8 PM"
         c.drawString(x+8, top-head_h+7, f'{d}  ·  {wlabel}'); c.setFillColor(INK)
-    for r, w in enumerate(WEEKS):
+    for r, w in enumerate(mkt_weeks):
         ytop = top - head_h - r*rowh
         c.setFillColor(col); c.rect(M, ytop-rowh, label_w-2, rowh, fill=1, stroke=0)
         c.setFillColor(white); c.setFont("Helvetica-Bold", 12)
@@ -90,7 +105,7 @@ def market_page(mk):
             c.rect(x, ytop-rowh, colw-2, rowh, fill=1, stroke=1)
             if not s:
                 c.setFillColor(MUTE); c.setFont("Helvetica-Oblique", 8)
-                c.drawString(x+8, ytop-rowh/2, "— (rolls to Aug)"); continue
+                c.drawString(x+8, ytop-rowh/2, "— (no shift this week)"); continue
             pad = 7; cy = ytop-12
             if s["event"]:
                 c.setFillColor(CREAM); c.rect(x+1, ytop-rowh+1, colw-4, rowh-2, fill=1, stroke=0)

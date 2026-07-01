@@ -12,8 +12,11 @@ PROGRAM = {
     "name": "Feel Free — Summer 2026 Guerrilla Field Sampling",
     "client": "Botanic Tonics, LLC (d/b/a Feel Free)",
     "agency": "Ignite Productions",
-    "start_date": "2026-06-25",
-    "end_date": "2026-07-31",
+    # Recomputed below from the actual generated schedule (min/max shift
+    # date across all non-TBD markets) — these two are just readable
+    # placeholders for anyone skimming the file.
+    "start_date": "2026-06-27",
+    "end_date": "2026-09-24",
     "bas_per_shift": 2,
     "billable_hours_per_ba": 5.5,
     "cadence": "Weekly, Thursday–Sunday",
@@ -43,6 +46,7 @@ MARKETS = {
         "code": "MIA", "color": "#E5552E",
         "warehouse": "13101 NE 16th Ave, Miami, FL 33161 (North Miami)",
         "product": "Kratom-eligible (FL Kratom CPA) + non-kratom SKUs",
+        "start": "2026-07-02", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "Wynwood", "vibe": "Arts district / breweries / World Cup watch parties",
                 "why": "Young 21+ creative crowd; FIFA World Cup watch parties surge through 7/19.",
@@ -70,6 +74,7 @@ MARKETS = {
         "code": "FTL", "color": "#1F8FB2",
         "warehouse": "4551 W Sunrise Blvd, Plantation, FL 33313",
         "product": "Kratom-eligible (FL Kratom CPA) + non-kratom SKUs",
+        "start": "2026-07-02", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "Himmarshee Village / Riverwalk", "vibe": "Downtown bars & clubs",
                 "why": "Cobblestone bar district; early-weekend 21+ crowd builds Thursday.",
@@ -97,6 +102,7 @@ MARKETS = {
         "code": "TPA", "color": "#C0392B",
         "warehouse": "10700 US Highway 19 N, Pinellas Park, FL 33782",
         "product": "Kratom-eligible (FL Kratom CPA) + non-kratom SKUs",
+        "start": "2026-07-02", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "Ybor City", "vibe": "Historic 7th Ave bar district",
                 "why": "Tampa's nightlife backbone; RITZ Ybor event nights draw crowds.",
@@ -124,6 +130,11 @@ MARKETS = {
         "code": "AUS", "color": "#6B4FA0",
         "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
         "product": "Kratom-eligible (TX Kratom CPA / HB 4127) + non-kratom SKUs",
+        # Ran its pilot weekend (Sat 6/27 + Sun 6/28) and did not continue
+        # into the extended run — every other active market picked up
+        # starting 7/2 through 9/24. Leave this window as-is unless told
+        # Austin is coming back.
+        "start": "2026-06-27", "end": "2026-06-28",
         "templates": {
             "Thu": {"corridor": "Rainey Street", "vibe": "Bungalow bars / patios",
                 "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
@@ -151,6 +162,11 @@ MARKETS = {
         "code": "SAT", "color": "#D68910",
         "warehouse": "3440 Fredericksburg Rd, San Antonio, TX 78201",
         "product": "Kratom-eligible (TX Kratom CPA / HB 4127) + non-kratom SKUs",
+        # Ran its pilot weekend (6/27-6/28) then continues straight through
+        # into the extended run — one continuous window covers both; the
+        # Mon-Wed gap between them is skipped automatically since only
+        # Thu-Sun dates ever get generated.
+        "start": "2026-06-27", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "St. Mary's Strip", "vibe": "Local bar & live-music corridor",
                 "why": "San Antonio's original entertainment district; heavy local 21+ traffic.",
@@ -174,6 +190,19 @@ MARKETS = {
                     {"zone": "Southtown (S Alamo)", "address": "S Alamo St & S St Mary's St"}]},
         },
     },
+    "Phoenix, AZ": {
+        # Planned market — warehouse, corridors, and dates not yet confirmed.
+        # `tbd: True` tells the schedule builder to skip shift generation
+        # for this market entirely; it still shows up in the market list /
+        # legend / deliverables as "coming soon" so nothing needs touching
+        # in build_html.py / build_pdf.py / build_xlsx.py once real data
+        # lands here — just fill in warehouse/product/templates/start/end
+        # and delete the `tbd` flag.
+        "code": "PHX", "color": "#8E8E93",
+        "warehouse": "TBD", "product": "TBD",
+        "tbd": True,
+        "templates": {},
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -183,7 +212,6 @@ OVERRIDES = {
     ("Miami, FL", "2026-07-04"): {"event": "July 4th — beach + fireworks crowd peak"},
     ("Ft. Lauderdale, FL", "2026-07-04"): {"event": "July 4th — beach + fireworks crowd peak"},
     ("Tampa / St. Pete, FL", "2026-07-04"): {"event": "July 4th — Gulf beach + fireworks peak"},
-    ("Austin, TX", "2026-07-04"): {"event": "July 4th — Lady Bird Lake / downtown fireworks"},
     ("San Antonio, TX", "2026-07-04"): {"event": "July 4th — River Walk + downtown fireworks"},
     ("Miami, FL", "2026-07-11"): {
         "corridor": "Wynwood Art Walk (2nd Sat)", "vibe": "Open-air arts + music night",
@@ -192,29 +220,11 @@ OVERRIDES = {
             {"zone": "Wynwood Walls", "address": "NW 2nd Ave & NW 26th St"},
             {"zone": "Wynwood Marketplace", "address": "2250 NW 2nd Ave"}],
         "event": "Wynwood Art Walk (2nd Saturday)"},
-    ("Austin, TX", "2026-07-16"): {
-        "corridor": "Red River Cultural District", "vibe": "Hot Summer Nights free fest",
-        "why": "Hot Summer Nights 7/16–18: 130+ artists, music from ~7pm; massive 21+ crowd.",
-        "stops": [
-            {"zone": "Stubb's / Red River", "address": "Red River St & E 8th St"},
-            {"zone": "Mohawk / Empire", "address": "Red River St & E 7th St"}],
-        "event": "Hot Summer Nights (Red River) 7/16–18"},
-    ("Austin, TX", "2026-07-17"): {
-        "corridor": "Red River Cultural District", "vibe": "Hot Summer Nights free fest",
-        "why": "Hot Summer Nights night 2; pair with 6th St pedestrian closure spillover.",
-        "stops": [
-            {"zone": "Red River strip", "address": "Red River St & E 7th St"},
-            {"zone": "E 6th pedestrian", "address": "E 6th St & Red River St"}],
-        "event": "Hot Summer Nights (Red River) 7/16–18"},
-    ("Austin, TX", "2026-07-18"): {
-        "corridor": "Red River + Hot Summer Nights Market", "vibe": "Daytime market + evening fest",
-        "why": "HSN Market at The Liberty 7/18 plus festival; all-day Red River traffic.",
-        "stops": [
-            {"zone": "The Liberty (HSN Market)", "address": "1618 E 6th St"},
-            {"zone": "Red River strip", "address": "Red River St & E 7th St"}],
-        "event": "Hot Summer Nights Market 7/18"},
     ("Tampa / St. Pete, FL", "2026-07-17"): {"event": "RITZ Ybor: Cat Power (7/17) — concert spillover"},
     ("Tampa / St. Pete, FL", "2026-07-24"): {"event": "RITZ Ybor: Qveen Herby (7/24) — concert spillover"},
+    # Austin's 7/4 and Hot Summer Nights (7/16-18) overrides were removed:
+    # Austin's window ends 6/28 (pilot only, did not continue — see
+    # MARKETS above), so those dates never get reached by the generator.
 }
 
 # ---------------------------------------------------------------------------
@@ -228,17 +238,40 @@ def daterange_thu_sun(start, end):
         d += datetime.timedelta(days=1)
     return days
 
-start = datetime.date.fromisoformat(PROGRAM["start_date"])
-end = datetime.date.fromisoformat(PROGRAM["end_date"])
-dates = daterange_thu_sun(start, end)
 WD = {3: "Thu", 4: "Fri", 5: "Sat", 6: "Sun"}
 
+# Fixed Thursday anchor for week-number buckets only (Week 1 = Thu 6/25 -
+# Sun 6/28). Kept separate from PROGRAM["start_date"] below, which instead
+# reports the true earliest generated shift date — deliberately NOT the
+# same thing, since not every market's real activity starts on this date.
+WEEK_ANCHOR = datetime.date(2026, 6, 25)
+
 def week_no(d):
-    return (d - start).days // 7 + 1
+    return (d - WEEK_ANCHOR).days // 7 + 1
+
+def _fmt(iso):
+    return datetime.date.fromisoformat(iso).strftime("%b %-d")
+
+# Per-market status line, derived purely from that market's own start/end —
+# not from "today", so it never goes stale between rebuilds.
+for name, m in MARKETS.items():
+    if m.get("tbd"):
+        m["status"] = "Schedule TBD — corridors & dates to be announced"
+        continue
+    s_d = datetime.date.fromisoformat(m["start"])
+    e_d = datetime.date.fromisoformat(m["end"])
+    if (e_d - s_d).days <= 3:
+        m["status"] = f"Pilot weekend only — {_fmt(m['start'])}–{e_d.day}, 2026 (concluded)"
+    else:
+        m["status"] = f"Weekly Thu–Sun · {_fmt(m['start'])} – {_fmt(m['end'])}, 2026"
 
 schedule = []
 for market, m in MARKETS.items():
-    for d in dates:
+    if m.get("tbd"):
+        continue
+    mkt_start = datetime.date.fromisoformat(m["start"])
+    mkt_end = datetime.date.fromisoformat(m["end"])
+    for d in daterange_thu_sun(mkt_start, mkt_end):
         wd = WD[d.weekday()]; iso = d.isoformat()
         tpl = dict(m["templates"][wd])
         ov = dict(OVERRIDES.get((market, iso), {}))
@@ -257,6 +290,11 @@ for market, m in MARKETS.items():
             "bas": PROGRAM["bas_per_shift"], "hours": PROGRAM["billable_hours_per_ba"],
         })
 
+# The overall program window is whatever the real per-market windows imply —
+# computed, not hand-maintained, so it can't drift out of sync with MARKETS.
+PROGRAM["start_date"] = min(s["date"] for s in schedule)
+PROGRAM["end_date"] = max(s["date"] for s in schedule)
+
 with open("schedule.json", "w") as f:
     json.dump({"program": PROGRAM, "markets": MARKETS, "schedule": schedule}, f, indent=2)
 
@@ -265,4 +303,8 @@ c = Counter(s["market"] for s in schedule)
 print("Total shifts:", len(schedule))
 for k, v in c.items():
     print(f"  {k}: {v} shifts ({v*2} BA-slots, {v*5.5:.0f} BA-hrs)")
-print("Span:", schedule[0]["date"], "->", schedule[-1]["date"], "| weeks:", sorted(set(s['week'] for s in schedule)))
+for name, m in MARKETS.items():
+    if m.get("tbd"):
+        print(f"  {name}: TBD (no shifts scheduled yet)")
+print("Span:", PROGRAM["start_date"], "->", PROGRAM["end_date"],
+      "| weeks:", sorted(set(s['week'] for s in schedule)))

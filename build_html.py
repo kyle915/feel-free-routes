@@ -39,6 +39,8 @@ section.market{margin-top:30px}
 .mhead{display:flex;align-items:center;gap:12px;border-left:6px solid var(--accent);padding:6px 0 6px 14px;margin-bottom:6px}
 .mhead h2{font-size:22px;font-weight:800}
 .mhead .wh{font-size:12.5px;color:var(--mute)}
+.mstatus{margin-left:auto;font-size:12px;font-weight:700;color:var(--accent);background:#e6f4f2;border:1px solid #c9e7e2;border-radius:999px;padding:5px 13px;white-space:nowrap}
+.tbdnote{color:var(--mute);font-size:13px;margin:2px 0 0 20px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .weeklbl{grid-column:1 / -1;font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 2px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;gap:7px;box-shadow:0 1px 2px rgba(20,32,43,.04)}
@@ -97,8 +99,8 @@ let fMkt = "ALL", fWk = "ALL", view = "cal";
 document.getElementById('subline').textContent = P.client + "  ·  " + P.start_date + " – " + P.end_date + "  ·  " + P.cadence;
 const totalShifts=S.length;
 document.getElementById('stats').innerHTML = [
-  ["5","Markets"],[totalShifts,"Total shifts"],[totalShifts*2,"BA deployments"],
-  [(totalShifts*5.5).toFixed(0),"BA-hours"],["4","Shifts / market / week"]
+  [markets.length,"Markets"],[totalShifts,"Total shifts"],[totalShifts*2,"BA deployments"],
+  [(totalShifts*5.5).toFixed(0),"BA-hours"],["4","Shifts / active market / week"]
 ].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
 function chip(txt,active,cls){return `<span class="chip ${cls||''} ${active?'active':''}">${txt}</span>`}
 function renderChips(){
@@ -127,9 +129,19 @@ function renderCal(){
   rows.forEach(s=>{(byMkt[s.market]=byMkt[s.market]||[]).push(s)});
   let html=""; const mlist = fMkt==="ALL"?markets:[fMkt];
   mlist.forEach(m=>{
-    const items=(byMkt[m]||[]); if(!items.length) return;
+    const items=(byMkt[m]||[]);
+    if(!items.length){
+      // TBD markets (or a market with zero shifts under the active filter)
+      // still get a section instead of silently vanishing from the page.
+      if(MK[m].tbd){
+        html+=`<section class="market"><div class="mhead" style="border-color:${MK[m].color}">
+          <h2>${m}</h2><span class="mstatus">${MK[m].status}</span></div>
+          <p class="tbdnote">Warehouse, corridors, and launch dates will appear here once confirmed.</p></section>`;
+      }
+      return;
+    }
     html+=`<section class="market"><div class="mhead" style="border-color:${MK[m].color}">
-      <h2>${m}</h2><span class="wh">⌂ Start: ${MK[m].warehouse}</span></div>`;
+      <h2>${m}</h2><span class="wh">⌂ Start: ${MK[m].warehouse}</span><span class="mstatus">${MK[m].status}</span></div>`;
     const byWk={}; items.forEach(s=>{(byWk[s.week]=byWk[s.week]||[]).push(s)});
     Object.keys(byWk).sort((a,b)=>a-b).forEach(w=>{
       const ds=byWk[w];
@@ -145,6 +157,10 @@ function renderList(){
   let html=`<table style="margin-top:20px"><thead><tr>
     <th>Wk</th><th>Date</th><th>Day</th><th>Market</th><th>Corridor</th><th>Window</th>
     <th>Route stops</th><th>Event</th></tr></thead><tbody>`;
+  if(!rows.length){
+    const msg = (fMkt!=="ALL" && MK[fMkt] && MK[fMkt].tbd) ? MK[fMkt].status : "No shifts match.";
+    html+=`<tr><td colspan="8" style="padding:20px;color:#5d6b78">${msg}</td></tr>`;
+  }
   rows.forEach(s=>{
     const stops=s.stops.map(t=>`${t.zone} (${t.time})`).join("<br>");
     html+=`<tr><td>${s.week}</td><td>${s.date_pretty}</td><td>${s.day}</td>
@@ -172,7 +188,7 @@ document.body.addEventListener('click',e=>{
 });
 document.getElementById('compliance').innerHTML = "<b>Compliance reminder.</b> "+P.compliance;
 document.getElementById('foot').innerHTML =
-  "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Phoenix is excluded from this phase.";
+  "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Austin ran a pilot weekend only; Phoenix is a planned market with corridors and dates still TBD.";
 render();
 </script>
 </body></html>"""

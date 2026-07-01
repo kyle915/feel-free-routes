@@ -4,8 +4,10 @@ Hosting + collaborative source for the Feel Free weekly street-sampling route pl
 (Ignite Productions). Edit one file, push, and the live site + all deliverables rebuild
 themselves.
 
-**Markets:** Miami · Ft. Lauderdale · Tampa/St. Pete · Austin · San Antonio (Phoenix excluded)
-**Window:** Jun 25 – Jul 31, 2026 · 4 shifts/market/week · 2 BAs × 5.5 hrs
+**Markets:** Miami · Ft. Lauderdale · Tampa/St. Pete · San Antonio (weekly, Jul 2 – Sep 24) ·
+Austin (pilot weekend only, Jun 27–28 — did not continue) · Phoenix (TBD)
+**Window:** Jun 27 – Sep 24, 2026 (varies by market — see `build_data.py`) · 4 shifts/market/week
+while active · 2 BAs × 5.5 hrs
 
 ---
 
