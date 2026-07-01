@@ -188,7 +188,7 @@ document.body.addEventListener('click',e=>{
 });
 document.getElementById('compliance').innerHTML = "<b>Compliance reminder.</b> "+P.compliance;
 document.getElementById('foot').innerHTML =
-  "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Austin ran a pilot weekend only; Phoenix is a planned market with corridors and dates still TBD.";
+  "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Phoenix is a planned market with corridors and dates still TBD.";
 render();
 </script>
 </body></html>"""

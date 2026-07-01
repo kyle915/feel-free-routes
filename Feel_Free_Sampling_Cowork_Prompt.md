@@ -37,8 +37,8 @@ You produce three deliverables every time: (1) an **internal Excel workbook** fo
   - Ft. Lauderdale, FL — 4551 W Sunrise Blvd, Plantation, FL 33313 — weekly, `2026-07-02` to `2026-09-24`
   - Tampa / St. Pete, FL — 10700 US Highway 19 N, Pinellas Park, FL 33782 — weekly, `2026-07-02` to `2026-09-24`
   - San Antonio, TX — 3440 Fredericksburg Rd, San Antonio, TX 78201 — weekly, `2026-06-27` to `2026-09-24`
-  - Austin, TX — 6330 Harold Ct, Austin, TX 78721 — pilot weekend only, `2026-06-27` to `2026-06-28`
-    (did not continue into the extended run)
+  - Austin, TX — 6330 Harold Ct, Austin, TX 78721 — weekly, `2026-06-27` to `2026-09-24`
+    (ran its pilot weekend 6/27-6/28 alongside San Antonio, then continues on the same schedule)
   - *(Phoenix, AZ — added as a placeholder market with `"tbd": True`; no warehouse, templates,
     or dates yet. Fill those in and drop the `tbd` flag once confirmed.)*
 - **Shifts/market/week:** 4 (Thu, Fri, Sat, Sun) while a market is active
@@ -87,11 +87,13 @@ GitHub Action rebuilds everything and republishes the site automatically.
   from the generated schedule — don't hand-edit those.
 - **Swap a corridor:** edit that market's `templates[day]` in `build_data.py`.
 - **Add an event surge:** add an entry to `OVERRIDES` keyed by `(market, "YYYY-MM-DD")`. If a
-  market's window shrinks (like Austin's did), remove any now-unreachable `OVERRIDES` entries for
-  dates outside its new window — dead entries just confuse the next person editing the file.
+  market's window shrinks, remove any now-unreachable `OVERRIDES` entries for dates outside its
+  new window — dead entries just confuse the next person editing the file.
 - **Different shift count per market:** adjust which weekdays are generated per market.
-- **Pause/stop a market without deleting it:** shrink its `"end"` date to its last real shift
-  (see Austin). It keeps its `templates` and shows up everywhere as "concluded."
+- **Pause/stop a market without deleting it:** shrink its `"end"` date to its last real shift.
+  It keeps its `templates` and shows up everywhere as "concluded" — a market's status line is
+  computed from its own `start`/`end` span, so this alone is enough (see `build_data.py`'s
+  per-market `status` loop).
 - **New market:** add a `MARKETS` entry with `code`, `color`, `warehouse`, `product`, `start`,
   `end`, and a full `templates` block (Thu/Fri/Sat/Sun), then re-run.
 - **Market not confirmed yet:** add a `MARKETS` entry with `"tbd": True` and no `start`/`end`/

@@ -252,7 +252,7 @@
       "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
       "product": "Kratom-eligible (TX Kratom CPA / HB 4127) + non-kratom SKUs",
       "start": "2026-06-27",
-      "end": "2026-06-28",
+      "end": "2026-09-24",
       "templates": {
         "Thu": {
           "corridor": "Rainey Street",
@@ -315,7 +315,7 @@
           ]
         }
       },
-      "status": "Pilot weekend only \u2014 Jun 27\u201328, 2026 (concluded)"
+      "status": "Weekly Thu\u2013Sun \u00b7 Jun 27 \u2013 Sep 24, 2026"
     },
     "San Antonio, TX": {
       "code": "SAT",
@@ -5012,6 +5012,1525 @@
           "zone": "E Cesar Chavez",
           "address": "E Cesar Chavez St & Robert T Martinez",
           "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 2,
+      "date": "2026-07-02",
+      "date_pretty": "Thu Jul 2",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 2,
+      "date": "2026-07-03",
+      "date_pretty": "Fri Jul 3",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 2,
+      "date": "2026-07-04",
+      "date_pretty": "Sat Jul 4",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": "July 4th \u2014 Lady Bird Lake / downtown fireworks",
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 2,
+      "date": "2026-07-05",
+      "date_pretty": "Sun Jul 5",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 3,
+      "date": "2026-07-09",
+      "date_pretty": "Thu Jul 9",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 3,
+      "date": "2026-07-10",
+      "date_pretty": "Fri Jul 10",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 3,
+      "date": "2026-07-11",
+      "date_pretty": "Sat Jul 11",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 3,
+      "date": "2026-07-12",
+      "date_pretty": "Sun Jul 12",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 4,
+      "date": "2026-07-16",
+      "date_pretty": "Thu Jul 16",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Red River Cultural District",
+      "vibe": "Hot Summer Nights free fest",
+      "why": "Hot Summer Nights 7/16\u201318: 130+ artists, music from ~7pm; massive 21+ crowd.",
+      "stops": [
+        {
+          "zone": "Stubb's / Red River",
+          "address": "Red River St & E 8th St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Mohawk / Empire",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": "Hot Summer Nights (Red River) 7/16\u201318",
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 4,
+      "date": "2026-07-17",
+      "date_pretty": "Fri Jul 17",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Red River Cultural District",
+      "vibe": "Hot Summer Nights free fest",
+      "why": "Hot Summer Nights night 2; pair with 6th St pedestrian closure spillover.",
+      "stops": [
+        {
+          "zone": "Red River strip",
+          "address": "Red River St & E 7th St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "E 6th pedestrian",
+          "address": "E 6th St & Red River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": "Hot Summer Nights (Red River) 7/16\u201318",
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 4,
+      "date": "2026-07-18",
+      "date_pretty": "Sat Jul 18",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Red River + Hot Summer Nights Market",
+      "vibe": "Daytime market + evening fest",
+      "why": "HSN Market at The Liberty 7/18 plus festival; all-day Red River traffic.",
+      "stops": [
+        {
+          "zone": "The Liberty (HSN Market)",
+          "address": "1618 E 6th St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "Red River strip",
+          "address": "Red River St & E 7th St",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": "Hot Summer Nights Market 7/18",
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 4,
+      "date": "2026-07-19",
+      "date_pretty": "Sun Jul 19",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 5,
+      "date": "2026-07-23",
+      "date_pretty": "Thu Jul 23",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 5,
+      "date": "2026-07-24",
+      "date_pretty": "Fri Jul 24",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 5,
+      "date": "2026-07-25",
+      "date_pretty": "Sat Jul 25",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 5,
+      "date": "2026-07-26",
+      "date_pretty": "Sun Jul 26",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 6,
+      "date": "2026-07-30",
+      "date_pretty": "Thu Jul 30",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 6,
+      "date": "2026-07-31",
+      "date_pretty": "Fri Jul 31",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 6,
+      "date": "2026-08-01",
+      "date_pretty": "Sat Aug 1",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 6,
+      "date": "2026-08-02",
+      "date_pretty": "Sun Aug 2",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 7,
+      "date": "2026-08-06",
+      "date_pretty": "Thu Aug 6",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 7,
+      "date": "2026-08-07",
+      "date_pretty": "Fri Aug 7",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 7,
+      "date": "2026-08-08",
+      "date_pretty": "Sat Aug 8",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 7,
+      "date": "2026-08-09",
+      "date_pretty": "Sun Aug 9",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 8,
+      "date": "2026-08-13",
+      "date_pretty": "Thu Aug 13",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 8,
+      "date": "2026-08-14",
+      "date_pretty": "Fri Aug 14",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 8,
+      "date": "2026-08-15",
+      "date_pretty": "Sat Aug 15",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 8,
+      "date": "2026-08-16",
+      "date_pretty": "Sun Aug 16",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 9,
+      "date": "2026-08-20",
+      "date_pretty": "Thu Aug 20",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 9,
+      "date": "2026-08-21",
+      "date_pretty": "Fri Aug 21",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 9,
+      "date": "2026-08-22",
+      "date_pretty": "Sat Aug 22",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 9,
+      "date": "2026-08-23",
+      "date_pretty": "Sun Aug 23",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 10,
+      "date": "2026-08-27",
+      "date_pretty": "Thu Aug 27",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 10,
+      "date": "2026-08-28",
+      "date_pretty": "Fri Aug 28",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 10,
+      "date": "2026-08-29",
+      "date_pretty": "Sat Aug 29",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 10,
+      "date": "2026-08-30",
+      "date_pretty": "Sun Aug 30",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 11,
+      "date": "2026-09-03",
+      "date_pretty": "Thu Sep 3",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 11,
+      "date": "2026-09-04",
+      "date_pretty": "Fri Sep 4",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 11,
+      "date": "2026-09-05",
+      "date_pretty": "Sat Sep 5",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 11,
+      "date": "2026-09-06",
+      "date_pretty": "Sun Sep 6",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 12,
+      "date": "2026-09-10",
+      "date_pretty": "Thu Sep 10",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 12,
+      "date": "2026-09-11",
+      "date_pretty": "Fri Sep 11",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 12,
+      "date": "2026-09-12",
+      "date_pretty": "Sat Sep 12",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 12,
+      "date": "2026-09-13",
+      "date_pretty": "Sun Sep 13",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 13,
+      "date": "2026-09-17",
+      "date_pretty": "Thu Sep 17",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 13,
+      "date": "2026-09-18",
+      "date_pretty": "Fri Sep 18",
+      "day": "Fri",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "6th Street + Red River",
+      "vibe": "Pedestrian party district",
+      "why": "E 6th closes to traffic Thu\u2013Sat nights; thousands bar-hopping.",
+      "stops": [
+        {
+          "zone": "E 6th St (pedestrian)",
+          "address": "E 6th St & Neches St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Red River (Stubb's)",
+          "address": "Red River St & E 7th St",
+          "time": "5:30\u20138:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 13,
+      "date": "2026-09-19",
+      "date_pretty": "Sat Sep 19",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "South Congress (SoCo)",
+      "vibe": "Daytime shopping + patios",
+      "why": "Iconic Saturday daytime stroll corridor.",
+      "stops": [
+        {
+          "zone": "S Congress & Elizabeth",
+          "address": "S Congress Ave & Elizabeth St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "S Congress & Academy",
+          "address": "S Congress Ave & Academy Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 13,
+      "date": "2026-09-20",
+      "date_pretty": "Sun Sep 20",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "East Austin",
+      "vibe": "Patios near warehouse",
+      "why": "Close-in Sunday daytime patio + brunch crowd; low travel burden.",
+      "stops": [
+        {
+          "zone": "E 6th St (East)",
+          "address": "E 6th St & Medina St",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "E Cesar Chavez",
+          "address": "E Cesar Chavez St & Robert T Martinez",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5.5
+    },
+    {
+      "market": "Austin, TX",
+      "code": "AUS",
+      "color": "#6B4FA0",
+      "week": 14,
+      "date": "2026-09-24",
+      "date_pretty": "Thu Sep 24",
+      "day": "Thu",
+      "call": "2:30 PM",
+      "active": "3:00\u20138:00 PM",
+      "release": "8:00 PM",
+      "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
+      "corridor": "Rainey Street",
+      "vibe": "Bungalow bars / patios",
+      "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
+      "stops": [
+        {
+          "zone": "Rainey St & Davis",
+          "address": "Rainey St & Davis St",
+          "time": "3:00\u20135:30 PM"
+        },
+        {
+          "zone": "Rainey St & River",
+          "address": "Rainey St & River St",
+          "time": "5:30\u20138:00 PM"
         }
       ],
       "event": null,

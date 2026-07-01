@@ -130,11 +130,11 @@ MARKETS = {
         "code": "AUS", "color": "#6B4FA0",
         "warehouse": "6330 Harold Ct, Austin, TX 78721 (East Austin)",
         "product": "Kratom-eligible (TX Kratom CPA / HB 4127) + non-kratom SKUs",
-        # Ran its pilot weekend (Sat 6/27 + Sun 6/28) and did not continue
-        # into the extended run — every other active market picked up
-        # starting 7/2 through 9/24. Leave this window as-is unless told
-        # Austin is coming back.
-        "start": "2026-06-27", "end": "2026-06-28",
+        # Ran its pilot weekend (6/27-6/28) alongside San Antonio, then
+        # continues straight through into the extended run just like SA —
+        # one continuous window covers both; the Mon-Wed gap is skipped
+        # automatically since only Thu-Sun dates ever get generated.
+        "start": "2026-06-27", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "Rainey Street", "vibe": "Bungalow bars / patios",
                 "why": "Laid-back 21+ Thursday crowd; Long Center Drop-In free concerts nearby.",
@@ -212,6 +212,7 @@ OVERRIDES = {
     ("Miami, FL", "2026-07-04"): {"event": "July 4th — beach + fireworks crowd peak"},
     ("Ft. Lauderdale, FL", "2026-07-04"): {"event": "July 4th — beach + fireworks crowd peak"},
     ("Tampa / St. Pete, FL", "2026-07-04"): {"event": "July 4th — Gulf beach + fireworks peak"},
+    ("Austin, TX", "2026-07-04"): {"event": "July 4th — Lady Bird Lake / downtown fireworks"},
     ("San Antonio, TX", "2026-07-04"): {"event": "July 4th — River Walk + downtown fireworks"},
     ("Miami, FL", "2026-07-11"): {
         "corridor": "Wynwood Art Walk (2nd Sat)", "vibe": "Open-air arts + music night",
@@ -220,11 +221,29 @@ OVERRIDES = {
             {"zone": "Wynwood Walls", "address": "NW 2nd Ave & NW 26th St"},
             {"zone": "Wynwood Marketplace", "address": "2250 NW 2nd Ave"}],
         "event": "Wynwood Art Walk (2nd Saturday)"},
+    ("Austin, TX", "2026-07-16"): {
+        "corridor": "Red River Cultural District", "vibe": "Hot Summer Nights free fest",
+        "why": "Hot Summer Nights 7/16–18: 130+ artists, music from ~7pm; massive 21+ crowd.",
+        "stops": [
+            {"zone": "Stubb's / Red River", "address": "Red River St & E 8th St"},
+            {"zone": "Mohawk / Empire", "address": "Red River St & E 7th St"}],
+        "event": "Hot Summer Nights (Red River) 7/16–18"},
+    ("Austin, TX", "2026-07-17"): {
+        "corridor": "Red River Cultural District", "vibe": "Hot Summer Nights free fest",
+        "why": "Hot Summer Nights night 2; pair with 6th St pedestrian closure spillover.",
+        "stops": [
+            {"zone": "Red River strip", "address": "Red River St & E 7th St"},
+            {"zone": "E 6th pedestrian", "address": "E 6th St & Red River St"}],
+        "event": "Hot Summer Nights (Red River) 7/16–18"},
+    ("Austin, TX", "2026-07-18"): {
+        "corridor": "Red River + Hot Summer Nights Market", "vibe": "Daytime market + evening fest",
+        "why": "HSN Market at The Liberty 7/18 plus festival; all-day Red River traffic.",
+        "stops": [
+            {"zone": "The Liberty (HSN Market)", "address": "1618 E 6th St"},
+            {"zone": "Red River strip", "address": "Red River St & E 7th St"}],
+        "event": "Hot Summer Nights Market 7/18"},
     ("Tampa / St. Pete, FL", "2026-07-17"): {"event": "RITZ Ybor: Cat Power (7/17) — concert spillover"},
     ("Tampa / St. Pete, FL", "2026-07-24"): {"event": "RITZ Ybor: Qveen Herby (7/24) — concert spillover"},
-    # Austin's 7/4 and Hot Summer Nights (7/16-18) overrides were removed:
-    # Austin's window ends 6/28 (pilot only, did not continue — see
-    # MARKETS above), so those dates never get reached by the generator.
 }
 
 # ---------------------------------------------------------------------------
