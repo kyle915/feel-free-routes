@@ -7,7 +7,7 @@ themselves.
 **Markets:** Miami · Ft. Lauderdale · Tampa/St. Pete (weekly, Jul 2 – Sep 24) · San Antonio ·
 Austin (weekly, Jun 27 – Sep 24) · Phoenix (TBD)
 **Window:** Jun 27 – Sep 24, 2026 (varies by market — see `build_data.py`) · 4 shifts/market/week
-while active · 2 BAs × 5.5 hrs
+while active · 2 BAs × 5 hrs
 
 ---
 

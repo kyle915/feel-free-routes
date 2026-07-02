@@ -18,7 +18,7 @@ PROGRAM = {
     "start_date": "2026-06-27",
     "end_date": "2026-09-24",
     "bas_per_shift": 2,
-    "billable_hours_per_ba": 5.5,
+    "billable_hours_per_ba": 5,
     "cadence": "Weekly, Thursday–Sunday",
     "windows": {
         "Thu": {"call": "2:30 PM", "active": "3:00–8:00 PM", "release": "8:00 PM"},
@@ -321,7 +321,7 @@ from collections import Counter
 c = Counter(s["market"] for s in schedule)
 print("Total shifts:", len(schedule))
 for k, v in c.items():
-    print(f"  {k}: {v} shifts ({v*2} BA-slots, {v*5.5:.0f} BA-hrs)")
+    print(f"  {k}: {v} shifts ({v*2} BA-slots, {v*5:.0f} BA-hrs)")
 for name, m in MARKETS.items():
     if m.get("tbd"):
         print(f"  {name}: TBD (no shifts scheduled yet)")

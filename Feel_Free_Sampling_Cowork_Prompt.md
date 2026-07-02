@@ -16,7 +16,7 @@ You produce three deliverables every time: (1) an **internal Excel workbook** fo
 - **Activation type:** mobile, "rogue" sampling on public sidewalks / street corridors. Each
   shift starts at the market **warehouse** (product pickup), then BAs rotate between 2 stations
   inside a high-traffic corridor.
-- **Staffing:** 2 Brand Ambassadors per shift, 5.5 billable hours per BA.
+- **Staffing:** 2 Brand Ambassadors per shift, 5 billable hours per BA.
 - **Cadence:** weekly, **Thursday–Sunday** (4 shifts per market per week).
   - **Thu & Fri:** call 2:30 PM, active **3:00–8:00 PM** (target evening 21+ nightlife crowd).
   - **Sat & Sun:** call 11:30 AM, active **12:00–5:00 PM** (target daytime beach / district crowd).
@@ -99,7 +99,7 @@ GitHub Action rebuilds everything and republishes the site automatically.
 - **Market not confirmed yet:** add a `MARKETS` entry with `"tbd": True` and no `start`/`end`/
   `templates` (see Phoenix). It shows up in every deliverable as "Schedule TBD" with zero shifts
   until you fill in the real details and drop the flag.
-- **Phase 2 / more units:** scale weeks or add markets; keep 2 BAs × 5.5 hrs unless told otherwise.
+- **Phase 2 / more units:** scale weeks or add markets; keep 2 BAs × 5 hrs unless told otherwise.
 
 ## Tone & quality bar
 Routes must be **specific and actionable** (named corridors, intersections, time blocks), not

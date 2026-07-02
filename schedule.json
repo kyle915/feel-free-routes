@@ -6,7 +6,7 @@
     "start_date": "2026-06-27",
     "end_date": "2026-09-24",
     "bas_per_shift": 2,
-    "billable_hours_per_ba": 5.5,
+    "billable_hours_per_ba": 5,
     "cadence": "Weekly, Thursday\u2013Sunday",
     "windows": {
       "Thu": {
@@ -428,7 +428,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -459,7 +459,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -490,7 +490,7 @@
       ],
       "event": "July 4th \u2014 beach + fireworks crowd peak",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -521,7 +521,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -552,7 +552,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -583,7 +583,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -614,7 +614,7 @@
       ],
       "event": "Wynwood Art Walk (2nd Saturday)",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -645,7 +645,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -676,7 +676,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -707,7 +707,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -738,7 +738,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -769,7 +769,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -800,7 +800,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -831,7 +831,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -862,7 +862,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -893,7 +893,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -924,7 +924,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -955,7 +955,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -986,7 +986,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1017,7 +1017,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1048,7 +1048,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1079,7 +1079,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1110,7 +1110,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1141,7 +1141,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1172,7 +1172,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1203,7 +1203,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1234,7 +1234,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1265,7 +1265,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1296,7 +1296,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1327,7 +1327,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1358,7 +1358,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1389,7 +1389,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1420,7 +1420,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1451,7 +1451,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1482,7 +1482,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1513,7 +1513,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1544,7 +1544,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1575,7 +1575,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1606,7 +1606,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1637,7 +1637,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1668,7 +1668,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1699,7 +1699,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1730,7 +1730,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1761,7 +1761,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1792,7 +1792,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1823,7 +1823,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1854,7 +1854,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1885,7 +1885,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Miami, FL",
@@ -1916,7 +1916,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -1947,7 +1947,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -1978,7 +1978,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2009,7 +2009,7 @@
       ],
       "event": "July 4th \u2014 beach + fireworks crowd peak",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2040,7 +2040,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2071,7 +2071,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2102,7 +2102,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2133,7 +2133,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2164,7 +2164,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2195,7 +2195,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2226,7 +2226,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2257,7 +2257,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2288,7 +2288,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2319,7 +2319,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2350,7 +2350,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2381,7 +2381,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2412,7 +2412,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2443,7 +2443,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2474,7 +2474,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2505,7 +2505,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2536,7 +2536,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2567,7 +2567,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2598,7 +2598,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2629,7 +2629,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2660,7 +2660,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2691,7 +2691,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2722,7 +2722,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2753,7 +2753,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2784,7 +2784,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2815,7 +2815,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2846,7 +2846,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2877,7 +2877,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2908,7 +2908,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2939,7 +2939,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -2970,7 +2970,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3001,7 +3001,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3032,7 +3032,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3063,7 +3063,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3094,7 +3094,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3125,7 +3125,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3156,7 +3156,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3187,7 +3187,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3218,7 +3218,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3249,7 +3249,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3280,7 +3280,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3311,7 +3311,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3342,7 +3342,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3373,7 +3373,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3404,7 +3404,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Ft. Lauderdale, FL",
@@ -3435,7 +3435,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3466,7 +3466,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3497,7 +3497,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3528,7 +3528,7 @@
       ],
       "event": "July 4th \u2014 Gulf beach + fireworks peak",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3559,7 +3559,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3590,7 +3590,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3621,7 +3621,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3652,7 +3652,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3683,7 +3683,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3714,7 +3714,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3745,7 +3745,7 @@
       ],
       "event": "RITZ Ybor: Cat Power (7/17) \u2014 concert spillover",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3776,7 +3776,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3807,7 +3807,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3838,7 +3838,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3869,7 +3869,7 @@
       ],
       "event": "RITZ Ybor: Qveen Herby (7/24) \u2014 concert spillover",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3900,7 +3900,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3931,7 +3931,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3962,7 +3962,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -3993,7 +3993,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4024,7 +4024,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4055,7 +4055,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4086,7 +4086,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4117,7 +4117,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4148,7 +4148,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4179,7 +4179,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4210,7 +4210,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4241,7 +4241,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4272,7 +4272,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4303,7 +4303,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4334,7 +4334,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4365,7 +4365,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4396,7 +4396,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4427,7 +4427,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4458,7 +4458,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4489,7 +4489,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4520,7 +4520,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4551,7 +4551,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4582,7 +4582,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4613,7 +4613,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4644,7 +4644,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4675,7 +4675,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4706,7 +4706,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4737,7 +4737,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4768,7 +4768,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4799,7 +4799,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4830,7 +4830,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4861,7 +4861,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4892,7 +4892,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4923,7 +4923,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Tampa / St. Pete, FL",
@@ -4954,7 +4954,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -4985,7 +4985,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5016,7 +5016,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5047,7 +5047,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5078,7 +5078,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5109,7 +5109,7 @@
       ],
       "event": "July 4th \u2014 Lady Bird Lake / downtown fireworks",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5140,7 +5140,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5171,7 +5171,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5202,7 +5202,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5233,7 +5233,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5264,7 +5264,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5295,7 +5295,7 @@
       ],
       "event": "Hot Summer Nights (Red River) 7/16\u201318",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5326,7 +5326,7 @@
       ],
       "event": "Hot Summer Nights (Red River) 7/16\u201318",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5357,7 +5357,7 @@
       ],
       "event": "Hot Summer Nights Market 7/18",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5388,7 +5388,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5419,7 +5419,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5450,7 +5450,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5481,7 +5481,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5512,7 +5512,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5543,7 +5543,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5574,7 +5574,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5605,7 +5605,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5636,7 +5636,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5667,7 +5667,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5698,7 +5698,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5729,7 +5729,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5760,7 +5760,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5791,7 +5791,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5822,7 +5822,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5853,7 +5853,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5884,7 +5884,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5915,7 +5915,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5946,7 +5946,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -5977,7 +5977,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6008,7 +6008,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6039,7 +6039,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6070,7 +6070,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6101,7 +6101,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6132,7 +6132,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6163,7 +6163,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6194,7 +6194,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6225,7 +6225,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6256,7 +6256,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6287,7 +6287,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6318,7 +6318,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6349,7 +6349,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6380,7 +6380,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6411,7 +6411,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6442,7 +6442,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6473,7 +6473,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6504,7 +6504,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "Austin, TX",
@@ -6535,7 +6535,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6566,7 +6566,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6597,7 +6597,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6628,7 +6628,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6659,7 +6659,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6690,7 +6690,7 @@
       ],
       "event": "July 4th \u2014 River Walk + downtown fireworks",
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6721,7 +6721,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6752,7 +6752,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6783,7 +6783,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6814,7 +6814,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6845,7 +6845,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6876,7 +6876,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6907,7 +6907,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6938,7 +6938,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -6969,7 +6969,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7000,7 +7000,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7031,7 +7031,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7062,7 +7062,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7093,7 +7093,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7124,7 +7124,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7155,7 +7155,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7186,7 +7186,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7217,7 +7217,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7248,7 +7248,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7279,7 +7279,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7310,7 +7310,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7341,7 +7341,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7372,7 +7372,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7403,7 +7403,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7434,7 +7434,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7465,7 +7465,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7496,7 +7496,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7527,7 +7527,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7558,7 +7558,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7589,7 +7589,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7620,7 +7620,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7651,7 +7651,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7682,7 +7682,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7713,7 +7713,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7744,7 +7744,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7775,7 +7775,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7806,7 +7806,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7837,7 +7837,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7868,7 +7868,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7899,7 +7899,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7930,7 +7930,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7961,7 +7961,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -7992,7 +7992,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -8023,7 +8023,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -8054,7 +8054,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -8085,7 +8085,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     },
     {
       "market": "San Antonio, TX",
@@ -8116,7 +8116,7 @@
       ],
       "event": null,
       "bas": 2,
-      "hours": 5.5
+      "hours": 5
     }
   ]
 }

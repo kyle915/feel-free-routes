@@ -41,7 +41,7 @@ facts = [
     ("Shift structure", f'{P["bas_per_shift"]} BAs/shift · {P["billable_hours_per_ba"]} billable hrs/BA'),
     ("Thu / Fri window", f'Call {P["windows"]["Thu"]["call"]} · Active {P["windows"]["Thu"]["active"]}'),
     ("Sat / Sun window", f'Call {P["windows"]["Sat"]["call"]} · Active {P["windows"]["Sat"]["active"]}'),
-    ("Total shifts (this plan)", f'{len(SCH)} shifts · {len(SCH)*2} BA-slots · {len(SCH)*5.5:.0f} BA-hours'),
+    ("Total shifts (this plan)", f'{len(SCH)} shifts · {len(SCH)*2} BA-slots · {len(SCH)*5:.0f} BA-hours'),
     ("Activation format", "Mobile street/sidewalk sampling. Start at warehouse (product pickup), then rotate route stops."),
 ]
 r = 4
@@ -64,7 +64,7 @@ from collections import Counter
 cnt = Counter(s["market"] for s in SCH)
 for market, m in MK.items():
     n = cnt[market]
-    vals = [market, m["code"], m["warehouse"], n, f"{n*5.5:.0f}", m["product"]]
+    vals = [market, m["code"], m["warehouse"], n, f"{n*5:.0f}", m["product"]]
     for j, v in enumerate(vals, 1):
         cell = ws.cell(row=r, column=j, value=v)
         cell.font = Font(size=10, color=INK); cell.alignment = wrap; cell.border = border
@@ -105,7 +105,7 @@ for market, m in MK.items():
     wsx["A1"] = f"{market}  —  Weekly Route Plan"
     wsx["A1"].font = Font(bold=True, size=14, color=m["color"].lstrip("#"))
     wsx["A2"] = f'Warehouse (shift start): {m["warehouse"]}'; wsx["A2"].font = Font(size=10, italic=True, color=MUTE)
-    wsx["A3"] = f'Product: {m["product"]}   |   2 BAs/shift · 5.5 hrs/BA'; wsx["A3"].font = Font(size=10, color=MUTE)
+    wsx["A3"] = f'Product: {m["product"]}   |   2 BAs/shift · 5 hrs/BA'; wsx["A3"].font = Font(size=10, color=MUTE)
     wsx["A4"] = m.get("status", ""); wsx["A4"].font = Font(size=10, bold=True, color=INK)
     hdr(wsx, 5, ["Wk", "Date", "Day", "Active Window", "Corridor", "Vibe",
                  "Stop 1 (zone · time · address)", "Stop 2 (zone · time · address)",

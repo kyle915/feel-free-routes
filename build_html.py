@@ -100,7 +100,7 @@ document.getElementById('subline').textContent = P.client + "  ·  " + P.start_d
 const totalShifts=S.length;
 document.getElementById('stats').innerHTML = [
   [markets.length,"Markets"],[totalShifts,"Total shifts"],[totalShifts*2,"BA deployments"],
-  [(totalShifts*5.5).toFixed(0),"BA-hours"],["4","Shifts / active market / week"]
+  [(totalShifts*5).toFixed(0),"BA-hours"],["4","Shifts / active market / week"]
 ].map(x=>`<div class="stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("");
 function chip(txt,active,cls){return `<span class="chip ${cls||''} ${active?'active':''}">${txt}</span>`}
 function renderChips(){

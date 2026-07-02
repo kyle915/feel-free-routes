@@ -33,7 +33,7 @@ def cover():
     c.setFont("Helvetica", 14)
     c.drawString(M, PH-126, f'{P["client"]}   ·   {P["start_date"]} – {P["end_date"]}   ·   {P["cadence"]}')
     stats = [(str(len(MK)), "Markets"), (str(len(SCH)), "Total shifts"), (str(len(SCH)*2), "BA deployments"),
-             (f'{len(SCH)*5.5:.0f}', "BA-hours"), ("4", "Shifts / active mkt / wk")]
+             (f'{len(SCH)*5:.0f}', "BA-hours"), ("4", "Shifts / active mkt / wk")]
     x = M; y = PH-220; cw = 138; ch = 78
     for big, lab in stats:
         c.setFillColor(HexColor("#1d5468")); c.roundRect(x, y, cw, ch, 10, fill=1, stroke=0)
@@ -83,7 +83,7 @@ def market_page(mk):
     c.setFont("Helvetica-Bold", 11); c.drawRightString(PW-M, PH-26, f'{m["code"]}  ·  Feel Free Summer 2026')
     c.setFont("Helvetica", 10); c.drawRightString(PW-M, PH-42, m.get("status", "Weekly guerrilla sampling route"))
     c.setFont("Helvetica", 9.5)
-    c.drawString(M, PH-57, f'⌂ Shift start (warehouse): {m["warehouse"]}   |   2 BAs/shift · 5.5 hrs/BA · {m["product"]}')
+    c.drawString(M, PH-57, f'⌂ Shift start (warehouse): {m["warehouse"]}   |   2 BAs/shift · 5 hrs/BA · {m["product"]}')
     top = PH-74; bottom = 64; label_w = 70; gx = M + label_w; gw = PW - M - gx; colw = gw/4
     head_h = 22; nrows = len(mkt_weeks); rowh = (top - bottom - head_h) / nrows
     c.setFillColor(INK)
