@@ -42,7 +42,10 @@ section.market{margin-top:30px}
 .mstatus{margin-left:auto;font-size:12px;font-weight:700;color:var(--accent);background:#e6f4f2;border:1px solid #c9e7e2;border-radius:999px;padding:5px 13px;white-space:nowrap}
 .tbdnote{color:var(--mute);font-size:13px;margin:2px 0 0 20px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.weeklbl{grid-column:1 / -1;font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 2px}
+.weeklbl{grid-column:1 / -1;font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 2px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.xport{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:none;color:var(--accent);background:#fff;border:1px solid var(--accent);border-radius:999px;padding:4px 12px;cursor:pointer;transition:.15s;white-space:nowrap}
+.xport:hover{background:var(--accent);color:#fff}
+.xport:active{transform:scale(.97)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;display:flex;flex-direction:column;gap:7px;box-shadow:0 1px 2px rgba(20,32,43,.04)}
 .card .d{display:flex;justify-content:space-between;align-items:baseline}
 .card .day{font-weight:800;font-size:14px}
@@ -145,7 +148,8 @@ function renderCal(){
     const byWk={}; items.forEach(s=>{(byWk[s.week]=byWk[s.week]||[]).push(s)});
     Object.keys(byWk).sort((a,b)=>a-b).forEach(w=>{
       const ds=byWk[w];
-      html+=`<div class="grid"><div class="weeklbl">Week ${w} · ${ds[0].date_pretty} →</div>`;
+      html+=`<div class="grid"><div class="weeklbl"><span>Week ${w} · ${ds[0].date_pretty} →</span>`+
+        `<button class="xport" data-xm="${m}" data-xw="${w}">⬇ Export slide</button></div>`;
       ds.forEach(s=>html+=cardHTML(s)); html+=`</div>`;
     });
     html+=`</section>`;
@@ -177,6 +181,8 @@ function render(){
   if(view==="cal") renderCal(); else renderList();
 }
 document.body.addEventListener('click',e=>{
+  const x=e.target.closest('.xport');
+  if(x){ exportSlide(x.dataset.xm, x.dataset.xw); return; }
   const c=e.target.closest('.chip'); if(!c) return;
   if(c.dataset.m!==undefined) fMkt=c.dataset.m;
   else if(c.classList.contains('mkt')) fMkt="ALL";
@@ -189,6 +195,125 @@ document.body.addEventListener('click',e=>{
 document.getElementById('compliance').innerHTML = "<b>Compliance reminder.</b> "+P.compliance;
 document.getElementById('foot').innerHTML =
   "Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). Routes anchor to public 21+ corridors and known summer foot-traffic surges; exact stations may rotate within each corridor per BA safety assessment, weather, permits, and the weekly Kratom Eligibility Schedule. Phoenix is a planned market with corridors and dates still TBD.";
+
+// ---- "Export slide" — one branded, client-deck-ready PNG per market/week ----
+// Drawn straight to a <canvas> (no library) so it stays a single self-
+// contained file, matching this page's own build philosophy. Title-card
+// layout mirrors the client's existing branded deck template; the right
+// panel (blank in that template) is filled in here with the week's actual
+// planned stops straight from the schedule data.
+const SLIDE_EYEBROW = "DRIVING TRIAL";
+const SLIDE_SUBTITLE = "250 & SUMMER SAMPLING PLAN";
+const SLIDE_INK = "#1B2A54";
+const SLIDE_MUTE = "#6B759A";
+const SLIDE_PAPER = "#F7F6F2";
+const SLIDE_PANEL = "#EFEDE6";
+
+function slideWeekLabel(days){
+  const toMD = iso => { const d=new Date(iso+"T00:00:00"); return (d.getMonth()+1)+"/"+d.getDate(); };
+  const dates = days.map(d=>d.date).sort();
+  const first = toMD(dates[0]), last = toMD(dates[dates.length-1]);
+  return first===last ? first : (first+" – "+last);
+}
+function drawTracked(ctx, text, x, y, spacing){
+  let cx = x;
+  for(const ch of text){ ctx.fillText(ch, cx, y); cx += ctx.measureText(ch).width + spacing; }
+  return cx;
+}
+function drawSlide(ctx, W, H, market, days, accent){
+  ctx.fillStyle = SLIDE_PAPER; ctx.fillRect(0,0,W,H);
+  const leftW = Math.round(W*0.46);
+  ctx.fillStyle = SLIDE_PANEL; ctx.fillRect(0,0,leftW,H);
+  ctx.fillStyle = "rgba(27,42,84,.06)";
+  for(let yy=36; yy<H; yy+=34) for(let xx=36; xx<leftW; xx+=34){ ctx.beginPath(); ctx.arc(xx,yy,1.8,0,Math.PI*2); ctx.fill(); }
+
+  const padX = Math.round(W*0.045);
+  // Wordmark: measure each piece at its own font BEFORE laying out, then
+  // stack left-to-right from a right-aligned start — fixed pixel offsets
+  // here would silently overlap/gap depending on actual glyph widths.
+  ctx.textBaseline = "alphabetic";
+  const wmY = 92, FF_FONT = "italic 700 40px Georgia, 'Times New Roman', serif",
+    X_FONT = "400 30px Arial, sans-serif", IGNITE_FONT = "800 34px Arial, sans-serif";
+  ctx.font = FF_FONT; const ffW = ctx.measureText("feel free.").width;
+  ctx.font = X_FONT; const xW = ctx.measureText("  ×  ").width;
+  ctx.font = IGNITE_FONT; const igniteW = ctx.measureText("IGNITE").width;
+  ctx.textAlign = "left";
+  let wx = W - padX - ffW - xW - igniteW;
+  ctx.fillStyle = SLIDE_INK; ctx.font = FF_FONT; ctx.fillText("feel free.", wx, wmY); wx += ffW;
+  ctx.fillStyle = SLIDE_MUTE; ctx.font = X_FONT; ctx.fillText("  ×  ", wx, wmY); wx += xW;
+  ctx.fillStyle = SLIDE_INK; ctx.font = IGNITE_FONT; ctx.fillText("IGNITE", wx, wmY);
+
+  let ty = Math.round(H*0.17);
+  ctx.fillStyle = SLIDE_INK; ctx.font = "800 46px Arial, sans-serif";
+  drawTracked(ctx, SLIDE_EYEBROW, padX, ty, 5);
+
+  ty += 50;
+  ctx.fillStyle = SLIDE_MUTE; ctx.font = "700 24px Arial, sans-serif";
+  drawTracked(ctx, SLIDE_SUBTITLE, padX, ty, 2);
+
+  ty += 110;
+  ctx.fillStyle = SLIDE_INK; ctx.font = "800 94px Arial, sans-serif";
+  ctx.fillText(market.toUpperCase(), padX, ty);
+
+  ty += 56;
+  ctx.strokeStyle = accent; ctx.lineWidth = 5;
+  ctx.beginPath(); ctx.moveTo(padX, ty); ctx.lineTo(leftW-padX, ty); ctx.stroke();
+
+  ty += 54;
+  ctx.fillStyle = accent; ctx.font = "800 34px Arial, sans-serif";
+  drawTracked(ctx, "WEEK "+slideWeekLabel(days), padX, ty, 3);
+
+  ctx.fillStyle = SLIDE_MUTE; ctx.font = "600 18px Arial, sans-serif";
+  ctx.fillText("Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free)", padX, H-44);
+
+  const rx = leftW + Math.round(W*0.045);
+  const rw = W - rx - padX;
+  let ry = Math.round(H*0.13);
+  ctx.fillStyle = SLIDE_INK; ctx.font = "800 24px Arial, sans-serif";
+  drawTracked(ctx, "PLANNED LOCATIONS THIS WEEK", rx, ry, 2);
+  ry += 30;
+  ctx.strokeStyle = "rgba(27,42,84,.18)"; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(rx, ry); ctx.lineTo(rx+rw, ry); ctx.stroke();
+  ry += 52;
+
+  const rowH = Math.floor((H - ry - 50) / days.length);
+  days.forEach(d=>{
+    const dt = new Date(d.date+"T00:00:00");
+    const label = d.day.toUpperCase()+" · "+dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}).toUpperCase();
+    ctx.fillStyle = accent; ctx.font = "800 26px Arial, sans-serif";
+    ctx.fillText(label, rx, ry);
+    ctx.fillStyle = SLIDE_INK; ctx.font = "700 26px Arial, sans-serif";
+    ctx.fillText(d.corridor, rx+270, ry);
+    let sy = ry + 34;
+    if(d.event){
+      ctx.fillStyle = "#8A6D00"; ctx.font = "700 17px Arial, sans-serif";
+      ctx.fillText("★ "+d.event, rx, sy);
+      sy += 28;
+    }
+    ctx.font = "600 19px Arial, sans-serif";
+    d.stops.forEach(st=>{
+      ctx.fillStyle = SLIDE_MUTE; ctx.fillText(st.time, rx, sy);
+      ctx.fillStyle = SLIDE_INK; ctx.fillText(st.zone+" — "+st.address, rx+175, sy);
+      sy += 27;
+    });
+    ry += rowH;
+  });
+}
+function exportSlide(market, week){
+  const days = S.filter(s=>s.market===market && String(s.week)===String(week)).sort((a,b)=>a.date.localeCompare(b.date));
+  if(!days.length) return;
+  const W=2400, H=1350;
+  const canvas = document.createElement('canvas');
+  canvas.width=W; canvas.height=H;
+  drawSlide(canvas.getContext('2d'), W, H, market, days, MK[market].color);
+  const a = document.createElement('a');
+  const safeMarket = market.replace(/[^A-Za-z0-9]+/g,'');
+  const safeWeek = slideWeekLabel(days).replace(/[^0-9]+/g,'-').replace(/^-+|-+$/g,'');
+  a.download = "FeelFree_"+safeMarket+"_Week"+week+"_"+safeWeek+".png";
+  a.href = canvas.toDataURL('image/png');
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
 render();
 </script>
 </body></html>"""
