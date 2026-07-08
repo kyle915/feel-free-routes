@@ -4,7 +4,19 @@ import json
 
 data = json.load(open("schedule.json"))
 P = data["program"]; MK = data["markets"]; SCH = data["schedule"]
-payload = json.dumps({"program": P, "markets": MK, "schedule": SCH})
+
+# Real field photos from the BA teams, kept separate from schedule.json
+# (which build_data.py regenerates from scratch) so they survive reruns.
+# Left empty for now — Kyle, to add photos: drop full-resolution originals in
+# photos/<file>.jpg (never resized/recompressed here — that was the whole
+# point of moving them off the slide deck), then add entries below as
+# {"file": "<file>.jpg", "caption": "<short label>"} under the matching
+# market key, rerun `python3 build_html.py`, and commit + push. The gallery
+# and "Download all" button on each market's section only render when that
+# market has at least one entry here.
+PHOTOS = {}
+
+payload = json.dumps({"program": P, "markets": MK, "schedule": SCH, "photos": PHOTOS})
 
 HTML = """<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"/>
@@ -64,6 +76,14 @@ th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);verti
 th{background:var(--ink);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:128px}
 tr:hover td{background:#fafcfd}
 .tagcode{font-weight:800;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px}
+.photos{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
+.photos .phead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.photos .plabel{font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.pcard{display:block;border-radius:10px;overflow:hidden;background:#eef1f4;border:1px solid var(--line)}
+.pcard img{width:100%;height:160px;object-fit:cover;display:block}
+.pcap{font-size:11px;color:var(--mute);padding:6px 8px}
+@media(max-width:560px){.pgrid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.pcard img{height:120px}}
 .foot{margin-top:30px;font-size:12px;color:var(--mute);border-top:1px solid var(--line);padding-top:16px}
 .note{background:#fff;border:1px solid var(--line);border-left:4px solid #c0392b;border-radius:10px;padding:12px 14px;font-size:12.5px;color:var(--ink);margin-top:16px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}}
@@ -95,7 +115,7 @@ tr:hover td{background:#fafcfd}
 </div>
 <script>
 const DATA = __PAYLOAD__;
-const S = DATA.schedule, MK = DATA.markets, P = DATA.program;
+const S = DATA.schedule, MK = DATA.markets, P = DATA.program, PH = DATA.photos || {};
 const markets = Object.keys(MK);
 const weeks = [...new Set(S.map(s=>s.week))].sort((a,b)=>a-b);
 let fMkt = "ALL", fWk = "ALL", view = "cal";
@@ -119,6 +139,15 @@ function renderChips(){
     + `<span><span class="dot" style="background:#f0d98a"></span>Event / surge anchor</span>`;
 }
 function filtered(){return S.filter(s=>(fMkt==="ALL"||s.market===fMkt)&&(fWk==="ALL"||s.week==fWk))}
+function photosHTML(m){
+  const pics = PH[m]; if(!pics||!pics.length) return "";
+  const cards = pics.map(p=>`<a class="pcard" href="photos/${p.file}" target="_blank" rel="noopener">
+    <img src="photos/${p.file}" alt="${p.caption}" loading="lazy"><div class="pcap">${p.caption}</div></a>`).join("");
+  return `<div class="photos"><div class="phead">
+    <span class="plabel">Field Photos</span>
+    <button class="xport" data-pxm="${m}">⬇ Download all (${pics.length})</button>
+  </div><div class="pgrid">${cards}</div></div>`;
+}
 function cardHTML(s){
   const stops = s.stops.map(t=>`<div class="stop"><b>${t.zone}</b><span class="meta">${t.time} · ${t.address}</span></div>`).join("");
   return `<div class="card" style="border-top:3px solid ${s.color}">
@@ -152,6 +181,7 @@ function renderCal(){
         `<button class="xport" data-xm="${m}" data-xw="${w}">⬇ Export slide</button></div>`;
       ds.forEach(s=>html+=cardHTML(s)); html+=`</div>`;
     });
+    html+=photosHTML(m);
     html+=`</section>`;
   });
   document.getElementById('calwrap').innerHTML = html || "<p style='margin-top:30px;color:#5d6b78'>No shifts match.</p>";
@@ -182,7 +212,11 @@ function render(){
 }
 document.body.addEventListener('click',e=>{
   const x=e.target.closest('.xport');
-  if(x){ exportSlide(x.dataset.xm, x.dataset.xw); return; }
+  if(x){
+    if(x.dataset.pxm!==undefined) downloadAllPhotos(x.dataset.pxm);
+    else exportSlide(x.dataset.xm, x.dataset.xw);
+    return;
+  }
   const c=e.target.closest('.chip'); if(!c) return;
   if(c.dataset.m!==undefined) fMkt=c.dataset.m;
   else if(c.classList.contains('mkt')) fMkt="ALL";
@@ -312,6 +346,27 @@ function exportSlide(market, week){
   a.download = "FeelFree_"+safeMarket+"_Week"+week+"_"+safeWeek+".png";
   a.href = canvas.toDataURL('image/png');
   document.body.appendChild(a); a.click(); a.remove();
+}
+
+// ---- Field photo downloads — full-resolution originals, never resized/
+// recompressed server-side. Fetched as blobs (not bare <a download> hrefs)
+// and staggered ~350ms apart so browsers don't treat a tight burst of
+// programmatic downloads as blocked pop-ups.
+async function downloadAllPhotos(market){
+  const pics = PH[market]; if(!pics||!pics.length) return;
+  for(let i=0;i<pics.length;i++){
+    const p = pics[i];
+    try{
+      const res = await fetch("photos/"+p.file);
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = p.file;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url), 4000);
+    }catch(err){ console.error('Download failed for', p.file, err); }
+    if(i < pics.length-1) await new Promise(r=>setTimeout(r, 350));
+  }
 }
 
 render();
