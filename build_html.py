@@ -148,6 +148,26 @@ th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);verti
 th{background:var(--ink);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:128px}
 tr:hover td{background:#fafcfd}
 .tagcode{font-weight:800;color:#fff;border-radius:6px;padding:2px 8px;font-size:11px}
+.recapwrap{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
+.recapbtn{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 15px;cursor:pointer;transition:.15s}
+.recapbtn:hover{border-color:var(--accent)}
+.recapbtn .caret{transition:transform .18s;font-size:11px;color:var(--mute)}
+.recapbtn.open .caret{transform:rotate(180deg)}
+.recapbody{display:none;margin-top:14px}
+.recapbody.open{display:block}
+.rnote{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:12px;color:var(--mute);font-style:italic;margin:0 0 12px}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px}
+@media(max-width:700px){.rgrid{grid-template-columns:1fr}}
+.rtable{width:100%;border-collapse:collapse;font-size:13px;background:transparent;border:none}
+.rtable caption{text-align:left;font-weight:800;font-size:12.5px;margin-bottom:6px;caption-side:top;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+.rtable td{padding:6px 0;border-bottom:1px solid var(--line);background:transparent}
+.rtable td.n{text-align:right;font-weight:700}
+.rtable tr.total td{font-weight:800;border-bottom:none;padding-top:8px;color:var(--ink)}
+.rqlabel{font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin:2px 0 8px}
+.rquotes{display:flex;flex-direction:column;gap:8px}
+.rquote{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.rquote .rtag{font-size:10.5px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.rquote .rtext{font-size:13px;line-height:1.45}
 .photos{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
 .photos .phead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
 .photos .plabel{font-size:12px;font-weight:800;color:var(--mute);text-transform:uppercase;letter-spacing:.1em}
@@ -187,7 +207,7 @@ tr:hover td{background:#fafcfd}
 </div>
 <script>
 const DATA = __PAYLOAD__;
-const S = DATA.schedule, MK = DATA.markets, P = DATA.program, PH = DATA.photos || {};
+const S = DATA.schedule, MK = DATA.markets, P = DATA.program, PH = DATA.photos || {}, RC = DATA.recap || {};
 const markets = Object.keys(MK);
 const weeks = [...new Set(S.map(s=>s.week))].sort((a,b)=>a-b);
 let fMkt = "ALL", fWk = "ALL", view = "cal";
@@ -219,6 +239,26 @@ function photosHTML(m){
     <span class="plabel">Field Photos</span>
     <button class="xport" data-pxm="${m}">⬇ Download all (${pics.length})</button>
   </div><div class="pgrid">${cards}</div></div>`;
+}
+function recapHTML(m){
+  const r = RC[m]; if(!r) return "";
+  const skuTable = (title, rows) => {
+    const tot = rows.reduce((s,x)=>s+x[1],0);
+    const body = rows.map(x=>`<tr><td>${x[0]}</td><td class="n">${x[1].toLocaleString()}</td></tr>`).join("");
+    return `<table class="rtable"><caption>${title}</caption><tbody>${body}
+      <tr class="total"><td>Total</td><td class="n">${tot.toLocaleString()}</td></tr></tbody></table>`;
+  };
+  const note = r.real ? "" : `<p class="rnote">Note: ${r.note}</p>`;
+  const quotes = r.callouts.map(c=>`<div class="rquote"><div class="rtag">${c[0]}</div><div class="rtext">${c[1]}</div></div>`).join("");
+  return `<div class="recapwrap">
+    <button class="recapbtn" data-rxm="${m}">📋 Sampling Recap — Week of Jul 2–8 <span class="caret">▾</span></button>
+    <div class="recapbody" data-rbody="${m}">
+      ${note}
+      <div class="rgrid">${skuTable("YTD SKU Breakdown", r.ytd)}${skuTable("This Window's SKU Breakdown", r.window)}</div>
+      <div class="rqlabel">Field Call-Outs</div>
+      <div class="rquotes">${quotes}</div>
+    </div>
+  </div>`;
 }
 function cardHTML(s){
   const stops = s.stops.map(t=>`<div class="stop"><b>${t.zone}</b><span class="meta">${t.time} · ${t.address}</span></div>`).join("");
@@ -253,6 +293,7 @@ function renderCal(){
         `<button class="xport" data-xm="${m}" data-xw="${w}">⬇ Export slide</button></div>`;
       ds.forEach(s=>html+=cardHTML(s)); html+=`</div>`;
     });
+    html+=recapHTML(m);
     html+=photosHTML(m);
     html+=`</section>`;
   });
@@ -283,6 +324,13 @@ function render(){
   if(view==="cal") renderCal(); else renderList();
 }
 document.body.addEventListener('click',e=>{
+  const rb=e.target.closest('.recapbtn');
+  if(rb){
+    const m=rb.dataset.rxm;
+    const body=document.querySelector(`.recapbody[data-rbody="${m}"]`);
+    rb.classList.toggle('open'); if(body) body.classList.toggle('open');
+    return;
+  }
   const x=e.target.closest('.xport');
   if(x){
     if(x.dataset.pxm!==undefined) downloadAllPhotos(x.dataset.pxm);
