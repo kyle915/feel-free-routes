@@ -10,4 +10,6 @@ echo "→ Building client PDF ..."
 python3 build_pdf.py
 echo "→ Building interactive HTML + index.html ..."
 python3 build_html.py
+echo "→ Building Open Shifts page ..."
+python3 build_open_shifts.py
 echo "✓ Done. The live site is index.html; downloadables are the .xlsx and .pdf."
