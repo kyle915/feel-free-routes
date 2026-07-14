@@ -19,14 +19,20 @@ PHOTOS = {}
 # Field sampling recap — ACTUAL results pulled from Spark (Feel Free /
 # Botanic Tonics, tenant 4), program-to-date through the Jul 9–12 weekend.
 # Per-market SKU totals are real summed per-SKU sample quantities from filed
-# recaps (recaps.field_sampling_report.sku_breakdown, "quantity" mode). The
+# recaps (recaps.field_sampling_report.sku_breakdown, "quantity" mode) PLUS
+# the Jun 27-28 pilot-weekend recaps whose event names predate the
+# "<Market> — <Corridor>" convention (so sku_breakdown skips them) — manually
+# folded in per Kyle: Miami +1,144 KM, Austin +320 KM/+296 CT, San Antonio
+# +55 KM; the "Test Event" recap excluded. On a future re-pull sku_breakdown
+# returns July-parsed data only, so re-add this pilot overlay (or rename those
+# events in Spark to the standard convention). The
 # call-outs are real BA / consumer field notes (field_callouts), lightly
 # trimmed for length and curated to consumer sentiment + actionable field
 # insight (operational / expense notes dropped). All five markets are real
 # filed-recap pulls now — refresh by re-pulling from Spark. Program-to-date
 # snapshot, not week-filtered against the picked week chip.
 RECAP = {'Miami, FL': {'real': True,
-               'ytd': [['Kava Mate', 4446]],
+               'ytd': [['Kava Mate', 5590]],
                'callouts': [['Wynwood · Jul 2', 'Love the presentation and the bottle!!'],
                             ['Brickell · Jul 3',
                              'A positive, engaging atmosphere throughout the activation. Consumers '
@@ -83,7 +89,7 @@ RECAP = {'Miami, FL': {'real': True,
                                         'Would appreciate more branding signage or brand gear to '
                                         'help people notice the activation.']]},
  'Austin, TX': {'real': True,
-                'ytd': [['Kava Mate', 773], ['Classic Tonic', 713]],
+                'ytd': [['Kava Mate', 1093], ['Classic Tonic', 1009]],
                 'callouts': [['Rainey Street · Jul 2',
                               'Overall the demo was successful — customers engaged, asked '
                               'questions, and many expressed interest in purchasing.'],
@@ -100,7 +106,7 @@ RECAP = {'Miami, FL': {'real': True,
                               'Good crowd; I focused on those with bags who could carry the '
                               'bottles home.']]},
  'San Antonio, TX': {'real': True,
-                     'ytd': [['Kava Mate', 617], ['Classic Tonic', 431]],
+                     'ytd': [['Kava Mate', 672], ['Classic Tonic', 431]],
                      'callouts': [['River Walk (Downtown) · Jul 4',
                                    'Consumers were familiar with the branding but not the product '
                                    'itself — a clear opportunity to educate.'],
