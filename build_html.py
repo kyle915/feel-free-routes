@@ -139,6 +139,11 @@ h1{font-size:34px;font-weight:800;margin:8px 0 6px;letter-spacing:-.5px}
 .stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 16px;min-width:120px}
 .stat b{display:block;font-size:22px;font-weight:800}
 .stat span{font-size:12px;opacity:.85}
+.tabsnav{background:var(--card);border-bottom:1px solid var(--line)}
+.tabsnav .wrap{display:flex;gap:2px;padding-top:0;padding-bottom:0}
+.tab{display:inline-flex;align-items:center;gap:7px;padding:14px 18px;font-size:13.5px;font-weight:700;color:var(--mute);text-decoration:none;border-bottom:3px solid transparent;transition:.15s}
+.tab:hover{color:var(--ink)}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .toolbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:18px 0 10px;border-bottom:1px solid var(--line)}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .label{font-size:12px;font-weight:700;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin-right:4px}
@@ -219,6 +224,10 @@ tr:hover td{background:#fafcfd}
   <div class="sub" id="subline"></div>
   <div class="stats" id="stats"></div>
 </div></header>
+<div class="tabsnav"><div class="wrap">
+  <a class="tab active" href="index.html">📅 Route Schedule</a>
+  <a class="tab" href="sampling-recap.html">📊 Sampling Recap</a>
+</div></div>
 <div class="wrap">
   <div class="toolbar">
     <div class="row"><span class="label">Market</span><span id="mktchips"></span></div>
