@@ -19,13 +19,13 @@ PHOTOS = {}
 # Field sampling recap — ACTUAL results pulled from Spark (Feel Free /
 # Botanic Tonics, tenant 4), program-to-date through the Jul 9–12 weekend.
 # Per-market SKU totals are real summed per-SKU sample quantities from filed
-# recaps (recaps.field_sampling_report.sku_breakdown, "quantity" mode) PLUS
-# the Jun 27-28 pilot-weekend recaps whose event names predate the
-# "<Market> — <Corridor>" convention (so sku_breakdown skips them) — manually
-# folded in per Kyle: Miami +1,144 KM, Austin +320 KM/+296 CT, San Antonio
-# +55 KM; the "Test Event" recap excluded. On a future re-pull sku_breakdown
-# returns July-parsed data only, so re-add this pilot overlay (or rename those
-# events in Spark to the standard convention). The
+# recaps (recaps.field_sampling_report.sku_breakdown, "quantity" mode).
+# Includes the Jun 27-28 pilot weekend: those 4 events were renamed in Spark
+# to the standard "<Market> — <Corridor> · date" convention (2026-07-14,
+# events 1258/1260/1527/1528), so sku_breakdown now folds them in
+# AUTOMATICALLY — a fresh re-pull returns these same totals (15,119 grand),
+# no manual overlay needed. The "Test Event" recap (136) stays excluded (its
+# name has no market). The
 # call-outs are real BA / consumer field notes (field_callouts), lightly
 # trimmed for length and curated to consumer sentiment + actionable field
 # insight (operational / expense notes dropped). All five markets are real
