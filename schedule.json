@@ -38,7 +38,7 @@
       "color": "#E5552E",
       "warehouse": "13101 NE 16th Ave, Miami, FL 33161 (North Miami)",
       "product": "Kratom-eligible (FL Kratom CPA) + non-kratom SKUs",
-      "start": "2026-07-02",
+      "start": "2026-06-27",
       "end": "2026-09-24",
       "templates": {
         "Thu": {
@@ -102,7 +102,7 @@
           ]
         }
       },
-      "status": "Weekly Thu\u2013Sun \u00b7 Jul 2 \u2013 Sep 24, 2026"
+      "status": "Weekly Thu\u2013Sun \u00b7 Jun 27 \u2013 Sep 24, 2026"
     },
     "Ft. Lauderdale, FL": {
       "code": "FTL",
@@ -399,6 +399,68 @@
     }
   },
   "schedule": [
+    {
+      "market": "Miami, FL",
+      "code": "MIA",
+      "color": "#E5552E",
+      "week": 1,
+      "date": "2026-06-27",
+      "date_pretty": "Sat Jun 27",
+      "day": "Sat",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "13101 NE 16th Ave, Miami, FL 33161 (North Miami)",
+      "corridor": "South Beach",
+      "vibe": "Beach + Lincoln Road daytime",
+      "why": "Highest weekend daytime foot traffic; beach-bar 21+ crowd.",
+      "stops": [
+        {
+          "zone": "Lincoln Road Mall",
+          "address": "Lincoln Rd & Washington Ave",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "Ocean Drive beachfront",
+          "address": "Ocean Dr & 8th St",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5
+    },
+    {
+      "market": "Miami, FL",
+      "code": "MIA",
+      "color": "#E5552E",
+      "week": 1,
+      "date": "2026-06-28",
+      "date_pretty": "Sun Jun 28",
+      "day": "Sun",
+      "call": "11:30 AM",
+      "active": "12:00\u20135:00 PM",
+      "release": "5:00 PM",
+      "warehouse": "13101 NE 16th Ave, Miami, FL 33161 (North Miami)",
+      "corridor": "Coconut Grove",
+      "vibe": "Waterfront / CocoWalk daytime",
+      "why": "Relaxed daytime 21+ brunch + waterfront crowd.",
+      "stops": [
+        {
+          "zone": "CocoWalk",
+          "address": "3015 Grand Ave",
+          "time": "12:00\u20132:30 PM"
+        },
+        {
+          "zone": "Regatta Park waterfront",
+          "address": "3500 Pan American Dr",
+          "time": "2:30\u20135:00 PM"
+        }
+      ],
+      "event": null,
+      "bas": 2,
+      "hours": 5
+    },
     {
       "market": "Miami, FL",
       "code": "MIA",

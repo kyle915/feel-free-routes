@@ -46,7 +46,12 @@ MARKETS = {
         "code": "MIA", "color": "#E5552E",
         "warehouse": "13101 NE 16th Ave, Miami, FL 33161 (North Miami)",
         "product": "Kratom-eligible (FL Kratom CPA) + non-kratom SKUs",
-        "start": "2026-07-02", "end": "2026-09-24",
+        # Ran the 6/27-6/28 pilot weekend (Sat South Beach + Sun Coconut Grove,
+        # 1,144 samples in the reconciled Spark data) alongside Austin + SA,
+        # then continues into the weekly run from 7/2 — one continuous window
+        # covers both; the Mon-Wed gap is skipped since only Thu-Sun generate.
+        # (Ft. Lauderdale + Tampa did NOT run the pilot, so they start 7/2.)
+        "start": "2026-06-27", "end": "2026-09-24",
         "templates": {
             "Thu": {"corridor": "Wynwood", "vibe": "Arts district / breweries / World Cup watch parties",
                 "why": "Young 21+ creative crowd; FIFA World Cup watch parties surge through 7/19.",

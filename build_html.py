@@ -250,6 +250,15 @@ const DATA = __PAYLOAD__;
 const S = DATA.schedule, MK = DATA.markets, P = DATA.program, PH = DATA.photos || {}, RC = DATA.recap || {};
 const markets = Object.keys(MK);
 const weeks = [...new Set(S.map(s=>s.week))].sort((a,b)=>a-b);
+// Each week bucket's actual Thu–Sun date span (from real shift dates), so the
+// UI labels weeks by DATE RANGE, not a global week number — the numbers don't
+// map per market (Week 1 is only the Jun 27–28 pilot; the FL markets' first
+// full week, Jul 2–5, shows as "Week 2"). Date ranges map correctly for every
+// market. Same-month spans render "Jul 2–5"; cross-month "Jul 30 – Aug 2".
+const weekSpan = {};
+S.forEach(s=>{const c=weekSpan[s.week]; if(!c){weekSpan[s.week]={min:s.date,max:s.date};}else{if(s.date<c.min)c.min=s.date; if(s.date>c.max)c.max=s.date;}});
+function fmtMD(iso){return new Date(iso+"T00:00:00").toLocaleDateString('en-US',{month:'short',day:'numeric'});}
+function weekLabel(w){const s=weekSpan[w]; if(!s)return "Wk "+w; if(s.min===s.max)return fmtMD(s.min); const b=new Date(s.max+"T00:00:00"); return (new Date(s.min+"T00:00:00").getMonth()===b.getMonth()) ? fmtMD(s.min)+"–"+b.getDate() : fmtMD(s.min)+" – "+fmtMD(s.max);}
 let fMkt = "ALL", fWk = "ALL", view = "cal";
 document.getElementById('subline').textContent = P.client + "  ·  " + P.start_date + " – " + P.end_date + "  ·  " + P.cadence;
 const totalShifts=S.length;
@@ -265,7 +274,7 @@ function renderChips(){
       return `<span class="chip mkt ${a?'active':''}" data-m="${m}" style="${a?`background:${c};border-color:${c}`:`border-color:${c}`}">${m}</span>`}).join("");
   document.getElementById('wkchips').innerHTML =
     chip("All weeks",fWk==="ALL",'wk') +
-    weeks.map(w=>`<span class="chip wk ${fWk==w?'active':''}" data-w="${w}">Wk ${w}</span>`).join("");
+    weeks.map(w=>`<span class="chip wk ${fWk==w?'active':''}" data-w="${w}">${weekLabel(w)}</span>`).join("");
   document.getElementById('legend').innerHTML = markets.map(m=>
     `<span><span class="dot" style="background:${MK[m].color}"></span>${m}</span>`).join("")
     + `<span><span class="dot" style="background:#f0d98a"></span>Event / surge anchor</span>`;
@@ -329,7 +338,7 @@ function renderCal(){
     const byWk={}; items.forEach(s=>{(byWk[s.week]=byWk[s.week]||[]).push(s)});
     Object.keys(byWk).sort((a,b)=>a-b).forEach(w=>{
       const ds=byWk[w];
-      html+=`<div class="grid"><div class="weeklbl"><span>Week ${w} · ${ds[0].date_pretty} →</span>`+
+      html+=`<div class="grid"><div class="weeklbl"><span>${weekLabel(w)} →</span>`+
         `<button class="xport" data-xm="${m}" data-xw="${w}">⬇ Export slide</button></div>`;
       ds.forEach(s=>html+=cardHTML(s)); html+=`</div>`;
     });

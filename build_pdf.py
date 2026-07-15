@@ -95,10 +95,19 @@ def market_page(mk):
     for r, w in enumerate(mkt_weeks):
         ytop = top - head_h - r*rowh
         c.setFillColor(col); c.rect(M, ytop-rowh, label_w-2, rowh, fill=1, stroke=0)
-        c.setFillColor(white); c.setFont("Helvetica-Bold", 12)
-        c.drawCentredString(M+(label_w-2)/2, ytop-rowh/2-4, f'Wk {w}')
-        anchor = next((s["date_pretty"] for s in rows if s["week"] == w), "")
-        c.setFont("Helvetica", 6.6); c.drawCentredString(M+(label_w-2)/2, ytop-rowh+8, anchor.replace("Thu ", ""))
+        # Label each week row by its DATE RANGE for THIS market (not a global
+        # "Wk N" — the numbers don't map per market since Week 1 is the Jun
+        # 27–28 pilot). Derived from the market's own shift dates in that week.
+        c.setFillColor(white); c.setFont("Helvetica-Bold", 9)
+        wrows = sorted((s for s in rows if s["week"] == w), key=lambda s: s["date"])
+        p0 = wrows[0]["date_pretty"].split(); p1 = wrows[-1]["date_pretty"].split()
+        if len(wrows) == 1:
+            rng = f'{p0[1]} {p0[2]}'
+        elif p0[1] == p1[1]:
+            rng = f'{p0[1]} {p0[2]}–{p1[2]}'
+        else:
+            rng = f'{p0[1]} {p0[2]}–{p1[1]} {p1[2]}'
+        c.drawCentredString(M+(label_w-2)/2, ytop-rowh/2-2, rng)
         for i, d in enumerate(DAYS):
             x = gx + i*colw; s = grid.get((w, d))
             c.setFillColor(white); c.setStrokeColor(LINE); c.setLineWidth(0.8)
