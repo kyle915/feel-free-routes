@@ -17,38 +17,40 @@ P = data["program"]; MK = data["markets"]; SCH = data["schedule"]
 PHOTOS = {}
 
 # Field sampling recap — ACTUAL results pulled from Spark (Feel Free /
-# Botanic Tonics, tenant 4), program-to-date through the Jul 9–12 weekend.
+# Botanic Tonics, tenant 4), program-to-date through the Jul 16–19 weekend
+# (pulled 2026-07-21 via the spark-api "Dump field sampling" GitHub Action —
+# /internal/cron/dump-field-sampling — no local DB proxy needed anymore).
 # Per-market SKU totals are real summed per-SKU sample quantities from filed
 # recaps (recaps.field_sampling_report.sku_breakdown, "quantity" mode).
-# Includes the Jun 27-28 pilot weekend: those 4 events were renamed in Spark
-# to the standard "<Market> — <Corridor> · date" convention (2026-07-14,
-# events 1258/1260/1527/1528), so sku_breakdown now folds them in
-# AUTOMATICALLY — a fresh re-pull returns these same totals (15,119 grand),
-# no manual overlay needed. The "Test Event" recap (136) stays excluded (its
-# name has no market). The
+# Grand total across the five markets: 24,508. The unfiltered program total
+# is 24,865 — the 357-sample gap sits on events without a parseable
+# "<Market> — <Corridor>" name (the Lockhart "Test Event" recap etc.) and
+# stays excluded, same policy as every prior pull. The
 # call-outs are real BA / consumer field notes (field_callouts), lightly
 # trimmed for length and curated to consumer sentiment + actionable field
 # insight (operational / expense notes dropped). All five markets are real
-# filed-recap pulls now — refresh by re-pulling from Spark. Program-to-date
-# snapshot, not week-filtered against the picked week chip.
+# filed-recap pulls — refresh by dispatching the workflow and updating the
+# dicts here + in build_recap.py. Program-to-date snapshot, not week-filtered
+# against the picked week chip.
 RECAP = {'Miami, FL': {'real': True,
-               'ytd': [['Kava Mate', 5590]],
-               'callouts': [['Wynwood · Jul 2', 'Love the presentation and the bottle!!'],
+               'ytd': [['Kava Mate', 7510], ['Classic Tonic', 960]],
+               'callouts': [['South Beach · Jul 18',
+                             'Last weekend of the FIFA crowd — college campuses, farmers markets, '
+                             'and event activations are the recommended next stops.'],
+                            ['Brickell · Jul 17',
+                             'College campuses are the next focus — FIFA watch parties and '
+                             'summer-session students respond well to both products.'],
+                            ['Coconut Grove · Jul 19', 'Love the product presentation!!'],
+                            ['Wynwood · Jul 13', 'I loved the taste!!!'],
                             ['Brickell · Jul 3',
                              'A positive, engaging atmosphere throughout the activation. Consumers '
                              'were curious about Feel Free Kava Maté and many stopped to ask '
                              'questions before sampling.'],
-                            ['Brickell · Jul 10', 'Love the presentation of the bottle!!!'],
-                            ['Coconut Grove · Jul 5', 'Love the taste of the kava!!!'],
-                            ['Wynwood · Jul 9',
-                             'A branded tent would give ambassadors much-needed shade in 99° heat '
-                             'and would elevate the activation with a more premium look while '
-                             'boosting visibility.'],
-                            ['Brickell · Jul 10',
-                             'Sampling times may need to be earlier to avoid the extreme midday '
+                            ['Coconut Grove · Jul 12',
+                             'Schedule sampling earlier in the day to help avoid the excessive '
                              'heat.']]},
  'Ft. Lauderdale, FL': {'real': True,
-                        'ytd': [['Classic Tonic', 2080], ['Kava Mate', 2070]],
+                        'ytd': [['Kava Mate', 2320], ['Classic Tonic', 2245]],
                         'callouts': [['Las Olas Boulevard · Jul 10',
                                       'Consumers were very receptive and asked thoughtful '
                                       'questions. Many commented positively on the quality after '
@@ -57,67 +59,82 @@ RECAP = {'Miami, FL': {'real': True,
                                       'Most enjoyed the taste and were interested in the energy, '
                                       'focus, and mood-support benefits. Many said they would '
                                       'purchase after sampling.'],
+                                     ['Himmarshee Village / Riverwalk · Jul 16',
+                                      'Coupons would help close — several consumers brought up '
+                                      'price.'],
+                                     ['Las Olas Boulevard · Jul 17',
+                                      'Branded giveaways — shirts and hats — would land well with '
+                                      'customers.'],
                                      ['Beach / Oceanside Park · Jul 12',
                                       'Customers asked for coupons they can use in store.'],
                                      ['Las Olas Boulevard · Jul 3',
                                       "Many mentioned they'd like to see the product available at "
-                                      'more retail locations.'],
-                                     ['Himmarshee Village / Riverwalk · Jul 9',
-                                      "The majority had positive reactions and several said they'd "
-                                      'consider buying after learning more about the product.'],
-                                     ['Beach / Oceanside Park · Jul 5',
-                                      'Giveaways like shirts or keychains would make a good '
-                                      'keepsake to prompt a later purchase.']]},
+                                      'more retail locations.']]},
  'Tampa / St. Pete, FL': {'real': True,
-                          'ytd': [['Classic Tonic', 1237], ['Kava Mate', 937]],
-                          'callouts': [['Ybor City · Jul 2',
-                                        'Most people we engaged were open to taking the Kava Mate '
-                                        'and Classic Tonic with them to try later — a receptive '
-                                        'audience.'],
+                          'ytd': [['Kava Mate', 2691], ['Classic Tonic', 2530]],
+                          'callouts': [['SoHo / S Howard Ave · Jul 17',
+                                        'The mega night street-food market along the Riverwalk was '
+                                        'fantastic — constant foot traffic and an audience eager '
+                                        'to sample; the most successful activation so far.'],
+                                       ['Downtown St. Pete · Jul 18',
+                                        'The Asian Festival crowd was very receptive — many loved '
+                                        'that it has no alcohol, and the discount cards were a '
+                                        'hit.'],
+                                       ['Clearwater / St. Pete Beach · Jul 19',
+                                        'The postcards are great openers for answering questions, '
+                                        'and the discount card makes people feel they are getting '
+                                        'extra value.'],
+                                       ['Ybor City · Jul 16',
+                                        'Most people were open to taking both SKUs with them to '
+                                        'try later — a more receptive audience than St. Pete.'],
                                        ['Downtown St. Pete · Jul 11',
                                         'A much better crowd here — this demographic was more open '
                                         'to trying the product, with constant foot traffic the '
                                         'whole time.'],
-                                       ['Clearwater / St. Pete Beach · Jul 12',
-                                        "A great night for sampling — a band at Ferg's across from "
-                                        'Tropicana Field right after the Rays game drew a large '
-                                        'crowd.'],
-                                       ['Ybor City · Jul 2',
-                                        'Most people were excited to take the sample to drink at '
-                                        'home.'],
                                        ['Downtown St. Pete · Jul 11',
                                         'Would appreciate more branding signage or brand gear to '
                                         'help people notice the activation.']]},
  'Austin, TX': {'real': True,
-                'ytd': [['Kava Mate', 1093], ['Classic Tonic', 1009]],
-                'callouts': [['Rainey Street · Jul 2',
-                              'Overall the demo was successful — customers engaged, asked '
-                              'questions, and many expressed interest in purchasing.'],
-                             ['East Austin · Jul 5',
-                              'Most customers enjoyed the taste and appreciated learning about the '
-                              "product's features."],
+                'ytd': [['Kava Mate', 2079], ['Classic Tonic', 1906]],
+                'callouts': [['East Austin · Jul 19',
+                              'High foot traffic and friendly pedestrians everywhere — a perfect '
+                              'location for activation.'],
+                             ['Red River / Summer Nights Market · Jul 18',
+                              "The downtown farmers market drew the brand's target audience — "
+                              'workout and wellness enthusiasts.'],
+                             ['Red River Cultural District · Jul 16',
+                              'Many shoppers were new to the product; after sampling they gave '
+                              'positive feedback and expressed purchase interest.'],
+                             ['Red River Cultural District · Jul 17',
+                              'The older demographic is more receptive; most pushback comes from '
+                              'the early-twenties crowd.'],
                              ['South Congress (SoCo) · Jul 4',
                               'A Fourth of July event with a good turnout — fewer people worried '
                               'about the kratom.'],
-                             ['6th Street + Red River · Jul 3',
-                              'A populated area — we got through a box and a half of each. Still '
-                              'some pushback on the kratom ingredient.'],
                              ['Rainey Street · Jul 2',
-                              'Good crowd; I focused on those with bags who could carry the '
-                              'bottles home.']]},
+                              'Overall the demo was successful — customers engaged, asked '
+                              'questions, and many expressed interest in purchasing.']]},
  'San Antonio, TX': {'real': True,
-                     'ytd': [['Kava Mate', 672], ['Classic Tonic', 431]],
-                     'callouts': [['River Walk (Downtown) · Jul 4',
+                     'ytd': [['Kava Mate', 1431], ['Classic Tonic', 836]],
+                     'callouts': [['Southtown / Blue Star · Jul 19',
+                                   'Great overall response — consumers enjoyed both flavors; more '
+                                   'educational material on serving size, effects, and retail '
+                                   'locations would help convert purchases.'],
+                                  ['River Walk (Downtown) · Jul 18',
+                                   'Consumers responded positively after learning the ingredients '
+                                   '— the most common asks were benefits info and where to buy.'],
+                                  ["St. Mary's Strip · Jul 16",
+                                   'Consumers liked the sweetness, the vegan angle, and the '
+                                   'packaging — the kava tingle was a fun talking point.'],
+                                  ['Pearl District · Jul 10',
+                                   "Working athletes and parents said they couldn't wait to try "
+                                   'it to relax after a long day.'],
+                                  ["St. Mary's Strip · Jul 9",
+                                   'A few consumers already purchase Feel Free — a repeat visitor '
+                                   'said he loved how calm he felt after drinking it.'],
+                                  ['River Walk (Downtown) · Jul 4',
                                    'Consumers were familiar with the branding but not the product '
-                                   'itself — a clear opportunity to educate.'],
-                                  ["St. Mary's Strip · Jul 2",
-                                   'The most active consumers were the ones intrigued to be '
-                                   'educated on the product.'],
-                                  ['Southtown / Blue Star · Jun 28',
-                                   'A few consumers were already familiar with the product.'],
-                                  ['Southtown / Blue Star · Jul 5',
-                                   "A few consumers weren't thrilled with the product — useful "
-                                   'early taste feedback.']]}}
+                                   'itself — a clear opportunity to educate.']]}}
 
 payload = json.dumps({"program": P, "markets": MK, "schedule": SCH, "photos": PHOTOS, "recap": RECAP})
 
@@ -300,7 +317,7 @@ function recapHTML(m){
   const note = r.real ? "" : `<p class="rnote">Note: ${r.note}</p>`;
   const quotes = r.callouts.map(c=>`<div class="rquote"><div class="rtag">${c[0]}</div><div class="rtext">${c[1]}</div></div>`).join("");
   return `<div class="recapwrap">
-    <button class="recapbtn" data-rxm="${m}">📋 Sampling Recap — Program to date (through Jul 12) <span class="caret">▾</span></button>
+    <button class="recapbtn" data-rxm="${m}">📋 Sampling Recap — Program to date (through Jul 19) <span class="caret">▾</span></button>
     <div class="recapbody" data-rbody="${m}">
       ${note}
       ${skuTable("Samples Distributed to Date · by SKU", r.ytd)}

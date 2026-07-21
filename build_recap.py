@@ -10,15 +10,18 @@ NO photos on purpose — the client pulls field photos directly from Spark
 (Kyle, 2026-07-15). This page is data only.
 
 DATA SOURCE — all figures are real, reconciled-to-Spark pulls (Feel Free /
-Botanic Tonics, tenant 4) for the program window Jun 27 - Jul 12, 2026:
-  * WEEKLY = per-market samples split across the three activation weekends
-    (Jun 27-28 pilot / Jul 2-5 / Jul 9-12). Row totals equal each market's
-    program-to-date SKU total below.
+Botanic Tonics, tenant 4) for the program window Jun 27 - Jul 19, 2026
+(pulled 2026-07-21 via the spark-api "Dump field sampling" GitHub Action):
+  * WEEKLY = per-market samples split across the four activation weekends
+    (Jun 27-28 pilot / Jul 2-5 / Jul 9-12 / Jul 16-19). Row totals equal each
+    market's program-to-date SKU total below.
   * VOLUME = per-market samples by SKU, the same numbers as build_html.py's
     RECAP[...]['ytd'] (recaps.field_sampling_report.sku_breakdown, "quantity"
-    mode). Grand total 15,119.
-To refresh: re-pull from Spark (see build_html.py's RECAP comment for the
-recipe), update the two dicts below, rerun `python3 build_recap.py`, commit.
+    mode). Grand total 24,508 across the five markets (a further 357 samples
+    sit on events without a parseable market name — the Lockhart Test Event
+    etc. — and stay excluded, same policy as prior pulls).
+To refresh: dispatch the "Dump field sampling" workflow on kyle915/spark-api,
+update the two dicts below from its JSON, rerun `python3 build_recap.py`, commit.
 """
 
 import json
@@ -26,27 +29,31 @@ import json
 data = json.load(open("schedule.json"))
 MK = data["markets"]
 
-WINDOW = "Jun 27 – Jul 12, 2026"
+WINDOW = "Jun 27 – Jul 19, 2026"
 
 # Column headers for the market x week grid; second item is an optional sub-label.
-COLS = [("Jun 27–28", "pilot"), ("Jul 2–5", ""), ("Jul 9–12", "")]
+COLS = [("Jun 27–28", "pilot"), ("Jul 2–5", ""), ("Jul 9–12", ""), ("Jul 16–19", "")]
 
-# (display label, schedule.json market key, [wk1, wk2, wk3])  None = not active
+# (display label, schedule.json market key, [wk1..wk4])  None = not active.
+# Weekly figures are the per-market sku_breakdown totals for each 7-day
+# Thursday-anchored window (Jun 25 / Jul 2 / Jul 9 / Jul 16) — late-filed
+# recaps mean earlier weeks grew vs the Jul-14 pull; every cell below is the
+# fresh 2026-07-21 re-pull, not a patch.
 ROWS = [
-    ("Miami",            "Miami, FL",            [1144, 2304, 2142]),
-    ("Ft. Lauderdale",   "Ft. Lauderdale, FL",   [None, 1795, 2355]),
-    ("Tampa / St. Pete", "Tampa / St. Pete, FL", [None,  418, 1756]),
-    ("Austin",           "Austin, TX",           [ 616, 1486, None]),
-    ("San Antonio",      "San Antonio, TX",      [ 119,  984, None]),
+    ("Miami",            "Miami, FL",            [1144, 2304, 2718, 2304]),
+    ("Ft. Lauderdale",   "Ft. Lauderdale, FL",   [None, 1945, 2355,  265]),
+    ("Tampa / St. Pete", "Tampa / St. Pete, FL", [None,  650, 1913, 2658]),
+    ("Austin",           "Austin, TX",           [ 616, 1806,  120, 1443]),
+    ("San Antonio",      "San Antonio, TX",      [ 119,  984,  333,  831]),
 ]
 
 # Per-market SKU volume (matches build_html.py RECAP ytd).
 VOLUME = {
-    "Miami":            [("Kava Mate", 5590)],
-    "Ft. Lauderdale":   [("Classic Tonic", 2080), ("Kava Mate", 2070)],
-    "Tampa / St. Pete": [("Classic Tonic", 1237), ("Kava Mate", 937)],
-    "Austin":           [("Kava Mate", 1093), ("Classic Tonic", 1009)],
-    "San Antonio":      [("Kava Mate", 672), ("Classic Tonic", 431)],
+    "Miami":            [("Kava Mate", 7510), ("Classic Tonic", 960)],
+    "Ft. Lauderdale":   [("Kava Mate", 2320), ("Classic Tonic", 2245)],
+    "Tampa / St. Pete": [("Kava Mate", 2691), ("Classic Tonic", 2530)],
+    "Austin":           [("Kava Mate", 2079), ("Classic Tonic", 1906)],
+    "San Antonio":      [("Kava Mate", 1431), ("Classic Tonic", 836)],
 }
 
 # Two SKUs, two consistent colors + a shared legend.
@@ -206,7 +213,7 @@ tr.allrow td.tot{color:var(--ink)}
 <div class="wrap">
   <section class="block">
     <div class="blocktitle">Samples by market &amp; week</div>
-    <div class="blocksub">Each market runs a Thursday–Sunday block per week. Miami samples Kava Mate only; the other markets split Kava Mate + Classic Tonic.</div>
+    <div class="blocksub">Each market runs a Thursday–Sunday block per week. All five markets sample Kava Mate + Classic Tonic (Miami added Classic Tonic in the Jul 16–19 week).</div>
     <div class="tablewrap"><table>
       <thead><tr><th>Market</th>"""
     + head_cells
@@ -226,7 +233,9 @@ tr.allrow td.tot{color:var(--ink)}
     + vol_rows
     + """</div>
   </section>
-  <div class="foot">Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). All figures are reconciled to filed recaps in Spark for the Jun 27 – Jul 12, 2026 window. Field photos are available directly in Spark.</div>
+  <div class="foot">Prepared by Ignite Productions for Botanic Tonics, LLC (d/b/a Feel Free). All figures are reconciled to filed recaps in Spark for the """
+    + WINDOW
+    + """ window. Field photos are available directly in Spark.</div>
 </div>
 </body></html>"""
 )
